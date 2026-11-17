@@ -1,644 +1,645 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>QueerIQ - Kuir Kültür, Tarih ve Trivia Platformu</title>
-  <meta name="description" content="Kuir kültürü keşfet, bilgini sına ve topluluğunla büyü. İnteraktif trivia, günlük seriler ve dostane düellolarla güvenli öğrenme deneyimi.">
-  <link rel="icon" type="image/png" href="assets/favicon.png">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <title>QueerIQ — Kuir Kültür, Tarih ve Trivia</title>
+  <meta name="description" content="Kuir tarihini, sinemasını ve kültürünü 10 soruluk trivia turları, interaktif Akademi kartları ve haftalık çift oylamalarıyla keşfet.">
+  <meta name="author" content="Enes Efe Tokta">
+  <meta name="theme-color" content="#0A0A0C">
+  <link rel="canonical" href="https://queer-iq.enesefetokta.com/">
 
-  <!-- Top Pride Accent Ribbon -->
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://queer-iq.enesefetokta.com/">
+  <meta property="og:title" content="QueerIQ — Kuir Kültür, Tarih ve Trivia">
+  <meta property="og:description" content="Öğren, yarış, keşfet. iOS ve Android için tasarlanan modern kuir kültür ve trivia deneyimi.">
+  <meta property="og:image" content="https://queer-iq.enesefetokta.com/assets/icon.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/icon.png">
+  <link rel="apple-touch-icon" href="assets/icon.png">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            oled: '#0A0A0C',
+            elevated: '#161618',
+            card: '#1C1C1E',
+            surface: '#2C2C2E',
+            indigoAccent: '#6366F1',
+            indigoSoft: '#818CF8',
+          },
+          fontFamily: {
+            sans: ['-apple-system', 'BlinkMacSystemFont', '"SF Pro Display"', '"SF Pro Text"', 'Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Editorial & Minimalist Custom Enhancements */
+    .ambient-spotlight {
+      background: radial-gradient(ellipse 60% 45% at 50% 0%, rgba(99, 102, 241, 0.16) 0%, rgba(168, 85, 247, 0.06) 45%, transparent 100%);
+    }
+    .glass-nav {
+      background: rgba(10, 10, 12, 0.78);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+    }
+    .editorial-card {
+      background: linear-gradient(180deg, rgba(28, 28, 30, 0.9) 0%, rgba(22, 22, 24, 0.95) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 28px;
+      transition: border-color 0.25s ease, transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .editorial-card:hover {
+      border-color: rgba(255, 255, 255, 0.18);
+    }
+    .pill-choice {
+      transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .pill-choice:active {
+      transform: scale(0.98);
+    }
+  </style>
+</head>
+<body class="bg-oled text-white antialiased selection:bg-indigo-500/30 selection:text-indigo-200">
+
+  <!-- Üst İnce Spektrum Çizgisi -->
   <div class="top-pride-ribbon" aria-hidden="true"></div>
 
-  <!-- Navigation Bar -->
-  <nav class="navbar" role="navigation" aria-label="Ana Navigasyon">
-    <div class="container nav-container">
-      <!-- Brand Logo -->
-      <a href="#" class="brand">
-        <div class="brand-icon-wrap">
-          <img src="assets/icon.png" alt="QueerIQ Logo">
-        </div>
-        <span class="brand-name">
-          QueerIQ<span class="brand-dot" aria-hidden="true"></span>
-        </span>
+  <!-- Minimalist Floating-Style Sticky Header -->
+  <header class="sticky top-0 z-50 w-full glass-nav border-b border-white/[0.07]">
+    <div class="max-w-5xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2.5 group">
+        <img src="assets/icon.png" alt="QueerIQ" class="w-8 h-8 rounded-[9px] border border-white/[0.14] transition-transform duration-200 group-hover:scale-105">
+        <span class="text-[17px] font-bold tracking-tight text-white">QueerIQ</span>
       </a>
 
-      <!-- Desktop Links -->
-      <ul class="nav-links">
-        <li><a href="#features" class="nav-link" data-i18n="nav.features">Özellikler</a></li>
-        <li><a href="#duels" class="nav-link" data-i18n="nav.duels">Düello & Öğrenme</a></li>
-        <li><a href="#safety" class="nav-link" data-i18n="nav.safety">Güvenlik & Gizlilik</a></li>
-        <li><a href="#legal" class="nav-link" data-i18n="nav.legal">Yasal & Şartlar</a></li>
-      </ul>
+      <nav class="hidden md:flex items-center gap-8 text-[13px] font-medium text-[#8E8E93]">
+        <a href="#deneyim" class="hover:text-white transition-colors">Deneyim</a>
+        <a href="#moduller" class="hover:text-white transition-colors">Modüller</a>
+        <a href="#dayanisma" class="hover:text-white transition-colors">Dayanışma Fonu</a>
+        <a href="#sss" class="hover:text-white transition-colors">SSS</a>
+      </nav>
 
-      <!-- Nav Actions -->
-      <div class="nav-actions">
-        <!-- Language Switcher Pill -->
-        <div class="lang-switch" role="group" aria-label="Dil Seçimi">
-          <button class="lang-btn active" data-lang="tr" aria-pressed="true">TR</button>
-          <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
-        </div>
-
-        <!-- Download CTA -->
-        <a href="#download" class="btn-primary">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-            <polyline points="7 10 12 15 17 10"></polyline>
-            <line x1="12" y1="15" x2="12" y2="3"></line>
-          </svg>
-          <span data-i18n="nav.download">Uygulamayı Keşfet</span>
+      <div class="flex items-center gap-3">
+        <a href="#indir" class="px-4 py-1.5 rounded-full text-xs font-semibold bg-white text-black hover:bg-neutral-200 transition-colors">
+          İndir
         </a>
-
-        <!-- Mobile Hamburger -->
-        <button class="mobile-toggle" id="mobileNavToggle" aria-label="Menüyü Aç/Kapat">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="3" y1="12" x2="21" y2="12"></line>
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <line x1="3" y1="18" x2="21" y2="18"></line>
+        <button id="mobileNavToggle" type="button" aria-label="Menü" aria-expanded="false" class="md:hidden w-8 h-8 rounded-full bg-card border border-white/[0.08] flex items-center justify-center text-white">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="4" y1="8" x2="20" y2="8"></line>
+            <line x1="4" y1="16" x2="20" y2="16"></line>
           </svg>
         </button>
       </div>
     </div>
-  </nav>
 
-  <!-- Mobile Drawer -->
-  <div class="mobile-drawer" id="mobileDrawer">
-    <a href="#features" class="nav-link" data-i18n="nav.features">Özellikler</a>
-    <a href="#duels" class="nav-link" data-i18n="nav.duels">Düello & Öğrenme</a>
-    <a href="#safety" class="nav-link" data-i18n="nav.safety">Güvenlik & Gizlilik</a>
-    <a href="#legal" class="nav-link" data-i18n="nav.legal">Yasal & Şartlar</a>
-    <div class="mobile-drawer-bottom">
-      <div class="lang-switch" role="group" aria-label="Dil Seçimi">
-        <button class="lang-btn active" data-lang="tr">TR</button>
-        <button class="lang-btn" data-lang="en">EN</button>
-      </div>
-      <a href="#download" class="btn-primary" data-i18n="nav.download">Uygulamayı Keşfet</a>
-    </div>
-  </div>
-
-  <!-- Hero Section -->
-  <header class="hero-section">
-    <div class="container">
-      <div class="hero-content">
-        <!-- Headline -->
-        <h1 class="hero-title">
-          <span data-i18n="hero.title_part1">Kuir Kültürü Keşfet.</span><br>
-          <span class="gradient-text" data-i18n="hero.title_part2">Bilgini Sına.</span><br>
-          <span data-i18n="hero.title_part3">Topluluğunla Büyü.</span>
-        </h1>
-
-        <!-- Subtitle -->
-        <p class="hero-subtitle" data-i18n="hero.subtitle">
-          Tarih, sanat, terimler ve kuir hafızayı interaktif testler, günlük seriler ve dostane düellolarla deneyimle. Tamamen güvenli, kapsayıcı ve anonim.
-        </p>
-
-        <!-- CTA Buttons -->
-        <div class="hero-cta-group">
-          <a href="#download" class="btn-primary btn-accent">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polygon points="5 3 19 12 5 21 5 3"></polygon>
-            </svg>
-            <span data-i18n="hero.cta_start">Hemen İncele</span>
-          </a>
-          <a href="#features" class="btn-secondary">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"></circle>
-              <polyline points="12 16 16 12 12 8"></polyline>
-              <line x1="8" y1="12" x2="16" y2="12"></line>
-            </svg>
-            <span data-i18n="hero.cta_features">Özellikleri Keşfet</span>
-          </a>
-        </div>
-
-        <!-- Phone Mockup with Interactive Trivia Simulator -->
-        <div class="hero-mockup-wrapper">
-          <div class="phone-mockup">
-            <div class="phone-screen">
-              <!-- Top Notch Bar -->
-              <div class="phone-notch-bar">
-                <span class="phone-notch-time">09:41</span>
-                <div class="phone-island"></div>
-                <div class="phone-notch-icons">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
-                    <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
-                    <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
-                    <line x1="12" y1="20" x2="12.01" y2="20"></line>
-                  </svg>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="2" y="7" width="16" height="10" rx="2" ry="2"></rect>
-                    <line x1="22" y1="11" x2="22" y2="13"></line>
-                  </svg>
-                </div>
-              </div>
-
-              <!-- Inner Simulator Content -->
-              <div class="phone-inner-content">
-                <!-- User Status Bar -->
-                <div class="phone-app-header">
-                  <div class="phone-user-chip">
-                    <div class="phone-avatar">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                        <circle cx="12" cy="7" r="4"></circle>
-                      </svg>
-                    </div>
-                    <div>
-                      <div class="phone-user-name">Alex M.</div>
-                      <div class="phone-user-pronoun">they / them</div>
-                    </div>
-                  </div>
-
-                  <div class="phone-streak-pill">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-                    </svg>
-                    <span data-i18n="sim.streak">14 Gün Seri</span>
-                  </div>
-                </div>
-
-                <!-- Live Trivia Card -->
-                <div class="phone-trivia-card">
-                  <div class="trivia-meta-bar">
-                    <span class="trivia-category-tag" data-i18n="sim.category">Kuir Tarihi</span>
-                    <span class="trivia-difficulty" data-i18n="sim.difficulty">Orta Seviye</span>
-                  </div>
-
-                  <div class="phone-question-text" data-i18n="sim.question">
-                    1969 yılında modern LGBTİ+ hakları hareketinin kıvılcımını ateşleyen ayaklanmalar hangi şehirde gerçekleşti?
-                  </div>
-
-                  <div class="phone-options-list">
-                    <button class="phone-opt-btn" data-correct="false">
-                      <span data-i18n="sim.opt_a">Berlin</span>
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="9"></circle>
-                      </svg>
-                    </button>
-                    <button class="phone-opt-btn" data-correct="true">
-                      <span data-i18n="sim.opt_b">New York (Stonewall)</span>
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                      </svg>
-                    </button>
-                    <button class="phone-opt-btn" data-correct="false">
-                      <span data-i18n="sim.opt_c">Londra</span>
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="9"></circle>
-                      </svg>
-                    </button>
-                    <button class="phone-opt-btn" data-correct="false">
-                      <span data-i18n="sim.opt_d">Paris</span>
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="9"></circle>
-                      </svg>
-                    </button>
-                  </div>
-
-                  <!-- Feedback box -->
-                  <div class="phone-trivia-feedback" id="phoneTriviaFeedback"></div>
-                </div>
-
-                <!-- Bottom Stats -->
-                <div class="phone-bottom-stat">
-                  <div class="stat-metric">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                      <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                    </svg>
-                    <span data-i18n="sim.stat_val">3/3 Tamamlandı</span>
-                  </div>
-                  <div class="stat-metric">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-                    </svg>
-                    <span data-i18n="sim.lives_val">5/5 Can</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+    <!-- Mobile Menu -->
+    <div id="mobileDrawer" class="hidden md:hidden px-5 pt-2 pb-6 bg-elevated border-b border-white/[0.08] space-y-1">
+      <a href="#deneyim" class="block py-2.5 text-sm text-neutral-200 border-b border-white/[0.06]">Deneyim</a>
+      <a href="#moduller" class="block py-2.5 text-sm text-neutral-200 border-b border-white/[0.06]">Modüller</a>
+      <a href="#dayanisma" class="block py-2.5 text-sm text-neutral-200 border-b border-white/[0.06]">Dayanışma Fonu (%10)</a>
+      <a href="#sss" class="block py-2.5 text-sm text-neutral-200">Sıkça Sorulan Sorular</a>
+      <div class="pt-4 flex items-center gap-4 text-xs text-[#8E8E93]">
+        <a href="destek-fonu.html" class="hover:text-white">Fon Şartnamesi</a>
+        <span>•</span>
+        <a href="privacy.html" class="hover:text-white">Gizlilik</a>
+        <span>•</span>
+        <a href="terms.html" class="hover:text-white">Şartlar</a>
       </div>
     </div>
   </header>
 
-  <!-- Metrics / Trust Bar -->
-  <section class="trust-bar" aria-label="Temel İstatistikler">
-    <div class="container">
-      <div class="metrics-grid">
-        <div class="metric-card">
-          <div class="metric-val" data-i18n="metric.q_count">1000+</div>
-          <div class="metric-lbl" data-i18n="metric.q_label">Küratörlü Trivia Sorusu</div>
-        </div>
-        <div class="metric-card">
-          <div class="metric-val"><span class="metric-accent" data-i18n="metric.safe_count">%100</span></div>
-          <div class="metric-lbl" data-i18n="metric.safe_label">Uçtan Uca Güvenli & Şifreli</div>
-        </div>
-        <div class="metric-card">
-          <div class="metric-val" data-i18n="metric.zero_count">0</div>
-          <div class="metric-lbl" data-i18n="metric.zero_label">Ticari Reklam & Veri Satışı</div>
-        </div>
-        <div class="metric-card">
-          <div class="metric-val" data-i18n="metric.cat_count">5+</div>
-          <div class="metric-lbl" data-i18n="metric.cat_label">Kapsamlı Bilgi Kategorisi</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Features Section (Bento Grid) -->
-  <section class="features-section" id="features">
-    <div class="container">
-      <div class="section-head">
-        <span class="section-tag" data-i18n="feat.tag">Neden QueerIQ?</span>
-        <h2 class="section-title" data-i18n="feat.title">Öğrenmeyi Keyifli, Güvenli ve Güçlendirici Kılan Tasarım</h2>
-        <p class="section-desc" data-i18n="feat.desc">Apple standartlarında sade bir arayüz, zengin arşiv ve toksisiteden arındırılmış bir topluluk deneyimi.</p>
-      </div>
-
-      <div class="bento-grid">
-        <!-- Card 1: Daily Streaks -->
-        <div class="bento-card">
-          <div>
-            <div class="card-icon-box">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"></circle>
-                <polyline points="12 6 12 12 16 14"></polyline>
-              </svg>
-            </div>
-            <h3 class="card-title" data-i18n="feat.f1_title">Günlük Seriler & Mikro-Öğrenme</h3>
-            <p class="card-body" data-i18n="feat.f1_desc">Günde sadece 5 dakikada kuir tarihin dönüm noktalarını, unutulan kahramanları ve güncel hak mücadelelerini keşfet. Serini bozmadan bilgini canlı tut.</p>
+  <main>
+    <!-- 1. EDITORIAL HERO SECTION -->
+    <section class="relative pt-16 pb-20 sm:pt-24 sm:pb-28 ambient-spotlight overflow-hidden">
+      <div class="max-w-4xl mx-auto px-5 sm:px-8 text-center space-y-7">
+        
+        <!-- App Icon Showcase -->
+        <div class="inline-flex flex-col items-center">
+          <div class="w-20 h-20 sm:w-22 sm:h-22 rounded-[22px] overflow-hidden border border-white/[0.15] shadow-2xl shadow-indigo-500/20">
+            <img src="assets/icon.png" alt="QueerIQ App Icon" class="w-full h-full object-cover">
           </div>
         </div>
 
-        <!-- Card 2: Identity & Pronouns (Featured Large) -->
-        <div class="bento-card featured-large">
-          <div>
-            <div class="card-icon-box">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                <circle cx="9" cy="7" r="4"></circle>
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-              </svg>
-            </div>
-            <h3 class="card-title" data-i18n="feat.f2_title">Kimlik & Zamir Özgürlüğü</h3>
-            <p class="card-body" data-i18n="feat.f2_desc">Kişisel zamirlerinizi, yönelim ve cinsiyet kimliğinizi profilinizde dilediğiniz gibi yansıtın. Gerçek ad zorunluluğu olmaksızın kendi alanınızı oluşturun.</p>
-          </div>
-          <div class="card-illustration">
-            <img src="assets/rainbow-register.png" alt="Kimlik ve Zamir Özgürlüğü">
-          </div>
-        </div>
+        <!-- Editorial Headline -->
+        <h1 class="text-4xl sm:text-6xl lg:text-[68px] font-extrabold tracking-[-0.03em] text-white leading-[1.04]">
+          Kuir hafızayı keşfet.<br>
+          <span class="text-gradient-pride">Bilgini oyuna dönüştür.</span>
+        </h1>
 
-        <!-- Card 3: Rich Categories -->
-        <div class="bento-card">
-          <div>
-            <div class="card-icon-box">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-              </svg>
-            </div>
-            <h3 class="card-title" data-i18n="feat.f3_title">Zengin Kategori Arşivi</h3>
-            <p class="card-body" data-i18n="feat.f3_desc">Tarih, Kültür & Sanat, Bilim & Sağlık ve Temel Terimler. Uzmanlar ve sivil toplum kaynakları ile doğrulanmış yüzlerce içerik.</p>
-            <div class="category-badges-row">
-              <span class="cat-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg><span data-i18n="cat.history">Tarih</span></span>
-              <span class="cat-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15 8 22 9 17 14 18 21 12 18 6 21 7 14 2 9 9 8 12 2"/></svg><span data-i18n="cat.culture">Kültür</span></span>
-              <span class="cat-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg><span data-i18n="cat.terms">Terimler</span></span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 4: Friendly Duels -->
-        <div class="bento-card">
-          <div>
-            <div class="card-icon-box">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-              </svg>
-            </div>
-            <h3 class="card-title" data-i18n="feat.f4_title">Dostane Düello Modu</h3>
-            <p class="card-body" data-i18n="feat.f4_desc">Arkadaşlarınla veya topluluk üyeleriyle eşleşerek gerçek zamanlı bilgi yarışlarına katıl. Rekabet ederken birlikte öğren.</p>
-          </div>
-        </div>
-
-        <!-- Card 5: Safe Space -->
-        <div class="bento-card">
-          <div>
-            <div class="card-icon-box">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-              </svg>
-            </div>
-            <h3 class="card-title" data-i18n="feat.f5_title">Sıfır Tolerans & Güvenli Alan</h3>
-            <p class="card-body" data-i18n="feat.f5_desc">Nefret söylemine, ayrımcılığa ve siber zorbalığa karşı sıfır tolerans. Saygı, eşitlik ve empati ilkeleriyle korunan dijital vaha.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Interactive Showcase / Duels Section -->
-  <section class="interactive-section" id="duels">
-    <div class="container">
-      <div class="split-showcase">
-        <!-- Left Text Description -->
-        <div class="showcase-text-wrap">
-          <h2 class="section-title" data-i18n="duel.title">Favori Çiftlerinle Düellolara Katıl</h2>
-          <p class="section-desc" data-i18n="duel.desc">
-            Tarlos, Malec, Heartstopper ve kuir popüler kültürün ikonik çiftleri trivia arenasında karşılaşıyor! Takımını seç, bilgilerini yarıştır ve liglerde yüksel.
-          </p>
-
-          <div class="feature-list">
-            <div class="feature-item">
-              <div class="check-icon-circle">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-              </div>
-              <div class="feature-item-text">
-                <strong data-i18n="duel.item1_title">İkonik Ship Karşılaşmaları: </strong>
-                <span data-i18n="duel.item1_text">Favori kuir çiftlerini destekleyerek popüler kültür ve tarih sorularında yarış.</span>
-              </div>
-            </div>
-
-            <div class="feature-item">
-              <div class="check-icon-circle">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-              </div>
-              <div class="feature-item-text">
-                <strong data-i18n="duel.item2_title">Gerçek Zamanlı Rekabet: </strong>
-                <span data-i18n="duel.item2_text">Aynı anda aynı sorulara yanıt vererek takımına en yüksek puanı kazandır.</span>
-              </div>
-            </div>
-
-            <div class="feature-item">
-              <div class="check-icon-circle">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-              </div>
-              <div class="feature-item-text">
-                <strong data-i18n="duel.item3_title">Haftalık Çiftler Sıralaması: </strong>
-                <span data-i18n="duel.item3_text">Her hafta en çok puan toplayan fandom ve çiftleri liderlik tablosunun zirvesine taşı.</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Right Visual Showcase Card -->
-        <div class="showcase-card-visual">
-          <div class="duel-preview-box">
-            <div class="duel-header">
-              <span class="duel-title-text" data-i18n="duel.card_header">Canlı Çiftler Düellosu</span>
-              <div class="duel-live-tag">
-                <span class="duel-live-pulse"></span>
-                <span data-i18n="duel.status_live">Canlı Maç</span>
-              </div>
-            </div>
-
-            <div class="duel-matchup-row">
-              <div class="duel-player">
-                <div class="duel-avatar">TK</div>
-                <span class="duel-player-name" data-i18n="duel.p1_name">Tarlos (TK & Carlos)</span>
-                <span class="duel-player-sub" data-i18n="duel.p1_series">9-1-1: Lone Star</span>
-                <span class="duel-player-score">860 XP</span>
-              </div>
-
-              <div class="duel-vs-circle">VS</div>
-
-              <div class="duel-player">
-                <div class="duel-avatar" style="border-color: #E11D48; color: #E11D48;">MA</div>
-                <span class="duel-player-name" data-i18n="duel.p2_name">Malec (Magnus & Alec)</span>
-                <span class="duel-player-sub" data-i18n="duel.p2_series">Shadowhunters</span>
-                <span class="duel-player-score">890 XP</span>
-              </div>
-            </div>
-
-            <div style="background: #F8FAFC; border-radius: 12px; padding: 12px; border: 1px solid #E2E8F0; margin-top: 10px;">
-              <div style="font-size: 11px; color: #64748B; font-weight: 600; text-transform: uppercase; margin-bottom: 4px;" data-i18n="duel.round_category">Popüler Kültür & Kuir Dizi Evreni</div>
-              <div style="font-size: 13px; font-weight: 600; color: #0F172A;" data-i18n="duel.round_status">İkonik Karşılaşma • Tur 5/5</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Safety & Privacy Section -->
-  <section class="safety-section" id="safety">
-    <div class="container">
-      <div class="safety-card-banner">
-        <div>
-          <h2 class="safety-title" data-i18n="safety.title">Gizliliğin Bir Tercih Değil, Temel Hak.</h2>
-          <p class="safety-desc" data-i18n="safety.desc">
-            QueerIQ, kullanıcılarının fiziksel ve dijital güvenliğini her tasarım kararının merkezine koyar. Gerçek kimliğinizi açıklamadan güvenle öğrenin ve sosyalleşin.
-          </p>
-
-          <a href="privacy.html" class="btn-primary">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-            </svg>
-            <span data-i18n="legal.privacy_title">Gizlilik Politikası</span>
-          </a>
-        </div>
-
-        <div class="safety-points">
-          <div class="safety-point-card">
-            <div class="point-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                <circle cx="12" cy="7" r="4"></circle>
-              </svg>
-            </div>
-            <div class="point-title" data-i18n="safety.p1_title">Anonim Profil Desteği</div>
-            <div class="point-text" data-i18n="safety.p1_desc">Gerçek adınızı veya telefon numaranızı vermek zorunda değilsiniz.</div>
-          </div>
-
-          <div class="safety-point-card">
-            <div class="point-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"></circle>
-                <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line>
-              </svg>
-            </div>
-            <div class="point-title" data-i18n="safety.p2_title">Veri Satışı Asla Yok</div>
-            <div class="point-text" data-i18n="safety.p2_desc">Verileriniz reklam verenlerle veya simsarlarla asla paylaşılmaz.</div>
-          </div>
-
-          <div class="safety-point-card">
-            <div class="point-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-              </svg>
-            </div>
-            <div class="point-title" data-i18n="safety.p3_title">Şifrelenmiş Altyapı</div>
-            <div class="point-text" data-i18n="safety.p3_desc">Tüm kimlik bilgileri Supabase üzerinde güvenle şifrelenir.</div>
-          </div>
-
-          <div class="safety-point-card">
-            <div class="point-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="3 6 5 6 21 6"></polyline>
-                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-              </svg>
-            </div>
-            <div class="point-title" data-i18n="safety.p4_title">Tek Tıkla Hesap Silme</div>
-            <div class="point-text" data-i18n="safety.p4_desc">İstediğiniz an tüm verilerinizi ve profilinizi kalıcı olarak silebilirsiniz.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Legal Section (Terms of Service & Privacy Policy Preview) -->
-  <section class="legal-preview-section" id="legal">
-    <div class="container">
-      <div class="section-head">
-        <h2 class="section-title" data-i18n="legal.title">Kullanım Koşulları ve Gizlilik Politikası</h2>
-        <p class="section-desc" data-i18n="legal.desc">Topluluk sözleşmemiz ve veri işleme ilkelerimiz hakkında detaylı bilgi edinin.</p>
-      </div>
-
-      <div class="legal-grid">
-        <!-- Terms Card -->
-        <div class="legal-box">
-          <div class="legal-box-top">
-            <span class="legal-tag" data-i18n="legal.terms_title">Kullanım Şartları</span>
-            <h3 class="legal-box-title" data-i18n="legal.terms_card_title">Topluluk Standartları & Şartlar</h3>
-            <p class="legal-box-excerpt" data-i18n="legal.terms_excerpt">
-              Topluluk güvenliği yönergeleri, nefret söylemine sıfır tolerans prensibi, fikri mülkiyet hakları ve kullanıcı sorumlulukları.
-            </p>
-          </div>
-          <a href="terms.html" class="btn-link-action">
-            <span data-i18n="legal.read_more">Metnin Tamamını İncele</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </a>
-        </div>
-
-        <!-- Privacy Card -->
-        <div class="legal-box">
-          <div class="legal-box-top">
-            <span class="legal-tag" data-i18n="legal.privacy_title">Gizlilik Politikası</span>
-            <h3 class="legal-box-title" data-i18n="legal.privacy_card_title">Veri Güvenliği & Mahremiyet</h3>
-            <p class="legal-box-excerpt" data-i18n="legal.privacy_excerpt">
-              Uçtan uca şifreleme, veri minimizasyonu taahhüdü, reklam takipçilerinin bulunmaması ve GDPR/KVKK veri silme hakları.
-            </p>
-          </div>
-          <a href="privacy.html" class="btn-link-action">
-            <span data-i18n="legal.read_more">Metnin Tamamını İncele</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA / Download Section -->
-  <section class="cta-section" id="download">
-    <div class="container">
-      <div class="cta-banner-card">
-        <h2 class="cta-title" data-i18n="cta.title">Kuir Kültür Hafızasını Birlikte Yaşatalım.</h2>
-        <p class="cta-subtitle" data-i18n="cta.subtitle">
-          QueerIQ ile öğrenmeye başla, serini kur ve topluluğunla güçlen. İndir ve hemen aramıza katıl.
+        <p class="text-base sm:text-xl text-[#8E8E93] max-w-2xl mx-auto font-normal leading-relaxed tracking-[-0.01em]">
+          Tarih, sinema, akademi kartları ve haftalık topluluk oylamaları. Yargılamadan uzak, sade ve kapsayıcı bir kuir kültür deneyimi.
         </p>
 
-        <div class="cta-buttons-row">
-          <!-- App Store -->
-          <a href="#" class="app-store-btn" onclick="return false;">
-            <svg viewBox="0 0 24 24">
+        <!-- Primary Store Actions -->
+        <div class="pt-2 flex flex-wrap items-center justify-center gap-3.5">
+          <a href="#indir" class="inline-flex items-center gap-3 px-6 py-3.5 rounded-2xl bg-white text-black hover:bg-neutral-200 transition-all font-semibold">
+            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
               <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.63-.78 1.06-1.87.94-2.97-.93.04-2.02.63-2.66 1.4-.56.65-.99 1.77-.85 2.85 1.02.08 2.02-.55 2.57-1.28z"/>
             </svg>
-            <div class="store-text-col">
-              <span class="store-sub" data-i18n="cta.app_store_sub">App Store'dan</span>
-              <span class="store-main" data-i18n="cta.app_store_title">Çok Yakında</span>
+            <div class="text-left">
+              <div class="text-[10px] font-semibold text-neutral-600 leading-none">App Store</div>
+              <div class="text-sm font-bold leading-tight">iOS için İndir</div>
             </div>
           </a>
 
-          <!-- Google Play -->
-          <a href="#" class="app-store-btn" onclick="return false;">
-            <svg viewBox="0 0 24 24">
+          <a href="#indir" class="inline-flex items-center gap-3 px-6 py-3.5 rounded-2xl bg-card hover:bg-surface border border-white/[0.1] text-white transition-all font-semibold">
+            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
               <path d="M3.609 1.814L13.793 12 3.61 22.186c-.378-.363-.61-.88-.61-1.46V3.273c0-.58.232-1.097.609-1.46zm11.242 11.244l2.456 2.456-11.97 6.84 9.514-9.296zm2.456-4.116l-2.456 2.456L5.337 2.1l11.97 6.842zm1.058 1.838l3.155 1.803c.895.512.895 1.344 0 1.856l-3.155 1.803-2.39-2.731 2.39-2.731z"/>
             </svg>
-            <div class="store-text-col">
-              <span class="store-sub" data-i18n="cta.google_play_sub">Google Play'den</span>
-              <span class="store-main" data-i18n="cta.google_play_title">Çok Yakında</span>
+            <div class="text-left">
+              <div class="text-[10px] font-medium text-[#8E8E93] leading-none">Google Play</div>
+              <div class="text-sm font-bold leading-tight">Android için İndir</div>
             </div>
           </a>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-top">
-        <!-- Brand Info -->
-        <div class="footer-brand-col">
-          <a href="#" class="brand">
-            <div class="brand-icon-wrap">
-              <img src="assets/icon.png" alt="QueerIQ Logo">
-            </div>
-            <span class="brand-name">QueerIQ<span class="brand-dot" aria-hidden="true"></span></span>
-          </a>
-          <p class="footer-desc" data-i18n="footer.brand_desc">
-            Kuir kültürünü, tarihini ve dayanışmasını interaktif trivia ve mikro-öğrenme yoluyla herkes için güvenli kılan modern platform.
+        <!-- Subtle Value Line -->
+        <div class="pt-2 text-xs text-[#8E8E93] flex items-center justify-center gap-3 flex-wrap">
+          <span>Ücretsiz Başla</span>
+          <span class="text-white/20">•</span>
+          <span>Türkçe & İngilizce</span>
+          <span class="text-white/20">•</span>
+          <a href="destek-fonu.html" class="text-rose-400 hover:underline font-medium">Gelirin %10'u Kuir Dayanışma Fonu'na</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. LIVE INTERACTIVE PLAYGROUND (Uygulamayı İndirmeden Dene) -->
+    <section id="deneyim" class="py-12 sm:py-20">
+      <div class="max-w-5xl mx-auto px-5 sm:px-8">
+        <div class="mb-10 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+          <div>
+            <p class="text-xs font-semibold text-indigoSoft uppercase tracking-wider mb-1.5">Canlı Önizleme</p>
+            <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-white">
+              Uygulamanın ritmini burada hisset.
+            </h2>
+          </div>
+          <p class="text-xs sm:text-sm text-[#8E8E93] max-w-xs">
+            Aşağıdaki kartlara dokunarak trivia turlarını, Akademi kartlarını ve haftalık çift oylamasını doğrudan test et.
           </p>
         </div>
 
-        <!-- Links: Product -->
-        <div>
-          <div class="footer-col-title" data-i18n="footer.col_product">Ürün</div>
-          <ul class="footer-list">
-            <li><a href="#features" class="footer-link" data-i18n="nav.features">Özellikler</a></li>
-            <li><a href="#duels" class="footer-link" data-i18n="nav.duels">Düello & Öğrenme</a></li>
-            <li><a href="#download" class="footer-link" data-i18n="nav.download">Uygulama</a></li>
-          </ul>
-        </div>
+        <!-- 3-Column Live Interactive Stage -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
+          
+          <!-- Widget A: 3-Question Mini Trivia Deck (7 Cols) -->
+          <div class="lg:col-span-7 editorial-card p-6 sm:p-8 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-5">
+                <div class="flex items-center gap-2">
+                  <span class="px-2.5 py-1 rounded-full bg-indigo-500/15 text-indigoSoft text-xs font-semibold">Trivia Turu</span>
+                  <span id="liveStepLabel" class="text-xs font-medium text-[#8E8E93]">Soru 1 / 3</span>
+                </div>
+                <span id="liveXpCounter" class="text-xs font-bold text-[#30D158] bg-[#30D158]/10 px-3 py-1 rounded-full">0 XP</span>
+              </div>
 
-        <!-- Links: Safety -->
-        <div>
-          <div class="footer-col-title" data-i18n="footer.col_safety">Güvenlik & İlkeler</div>
-          <ul class="footer-list">
-            <li><a href="#safety" class="footer-link" data-i18n="nav.safety">Güvenlik İlkeleri</a></li>
-            <li><a href="terms.html" class="footer-link" data-i18n="footer.link_guidelines">Topluluk Kuralları</a></li>
-          </ul>
-        </div>
+              <!-- Progress Bar -->
+              <div class="w-full h-1 rounded-full bg-surface mb-6 overflow-hidden">
+                <div id="liveProgressBar" class="h-full w-1/3 bg-indigoAccent rounded-full transition-all duration-300"></div>
+              </div>
 
-        <!-- Links: Legal -->
-        <div>
-          <div class="footer-col-title" data-i18n="footer.col_legal">Yasal Belgeler</div>
-          <ul class="footer-list">
-            <li><a href="terms.html" class="footer-link" data-i18n="footer.link_terms">Kullanım Şartları</a></li>
-            <li><a href="privacy.html" class="footer-link" data-i18n="footer.link_privacy">Gizlilik Politikası</a></li>
-          </ul>
+              <!-- Question -->
+              <h3 id="liveQuestionText" class="text-lg sm:text-xl font-bold text-white leading-snug mb-6">
+                1969 yılında modern LGBTİ+ hakları hareketinin dönüm noktası sayılan Stonewall direnişi hangi şehirde başladı?
+              </h3>
+
+              <!-- Options -->
+              <div id="liveOptionsContainer" class="space-y-2.5"></div>
+
+              <!-- Fact Explanation -->
+              <div id="liveFactBox" class="hidden mt-4 p-4 rounded-2xl bg-surface text-xs text-neutral-200 leading-relaxed"></div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-white/[0.07] flex items-center justify-between">
+              <span class="text-xs text-[#8E8E93]">Doğru yanıtta +10 XP kazanırsın</span>
+              <button id="liveNextBtn" type="button" class="hidden px-4 py-2 rounded-full text-xs font-bold bg-white text-black hover:bg-neutral-200 transition-colors cursor-pointer">
+                Sonraki Soru →
+              </button>
+            </div>
+          </div>
+
+          <!-- Right Stack: Academy Flip Card + Ship Arena Poll (5 Cols) -->
+          <div class="lg:col-span-5 flex flex-col gap-5">
+            
+            <!-- Widget B: Swipeable / Clickable Academy Card -->
+            <div class="editorial-card p-6 flex flex-col justify-between flex-1">
+              <div>
+                <div class="flex items-center justify-between mb-3">
+                  <span class="text-xs font-semibold text-[#FF9F0A]">Kuir Akademi Kartı</span>
+                  <span id="academyCardIndex" class="text-[11px] text-[#8E8E93]">1 / 3</span>
+                </div>
+                <h4 id="academyCardTitle" class="text-base font-bold text-white mb-2">
+                  Gökkuşağı Bayrağının Doğuşu (1978)
+                </h4>
+                <p id="academyCardBody" class="text-xs sm:text-[13px] text-[#8E8E93] leading-relaxed">
+                  Sanatçı ve aktivist Gilbert Baker tarafından San Francisco Onur Yürüyüşü için tasarlanan ilk bayrak, her biri farklı bir değeri temsil eden 8 renkten oluşuyordu.
+                </p>
+              </div>
+
+              <div class="mt-5 pt-3.5 border-t border-white/[0.07] flex items-center justify-between">
+                <span class="text-[11px] text-[#8E8E93]">Mikro-öğrenme kartları</span>
+                <button id="nextAcademyCardBtn" type="button" class="text-xs font-semibold text-indigoSoft hover:text-white transition-colors cursor-pointer">
+                  Sonraki Kart →
+                </button>
+              </div>
+            </div>
+
+            <!-- Widget C: Live Ship Arena Poll -->
+            <div class="editorial-card p-6 space-y-4">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-semibold text-[#FF375F]">Haftalık Çift Arenası</span>
+                <span id="shipTotalVotes" class="text-[11px] text-[#8E8E93]">1.248 oy</span>
+              </div>
+
+              <div class="space-y-2.5">
+                <button type="button" data-ship="a" class="ship-vote-btn w-full p-3 rounded-2xl bg-surface hover:bg-white/[0.12] border border-white/[0.06] flex items-center justify-between text-left transition-all cursor-pointer">
+                  <div>
+                    <div class="text-xs font-bold text-white">Nick & Charlie</div>
+                    <div class="text-[11px] text-[#8E8E93]">Heartstopper</div>
+                  </div>
+                  <span id="shipPctA" class="text-xs font-extrabold text-indigoSoft">%54</span>
+                </button>
+
+                <button type="button" data-ship="b" class="ship-vote-btn w-full p-3 rounded-2xl bg-surface hover:bg-white/[0.12] border border-white/[0.06] flex items-center justify-between text-left transition-all cursor-pointer">
+                  <div>
+                    <div class="text-xs font-bold text-white">Carlos & TK (Tarlos)</div>
+                    <div class="text-[11px] text-[#8E8E93]">9-1-1: Lone Star</div>
+                  </div>
+                  <span id="shipPctB" class="text-xs font-extrabold text-[#FF375F]">%46</span>
+                </button>
+              </div>
+
+              <p id="shipVoteHint" class="text-[11px] text-[#8E8E93]">
+                Oy vermek için bir çifte dokun.
+              </p>
+            </div>
+
+          </div>
         </div>
       </div>
+    </section>
 
-      <!-- Footer Bottom -->
-      <div class="footer-bottom">
-        <div data-i18n="footer.copy">© 2026 QueerIQ. Tüm hakları saklıdır.</div>
-        <div class="footer-pride-mark">
-          <span class="footer-pride-bar" aria-hidden="true"></span>
-          <span data-i18n="footer.pride_tag">Eşitlik, çeşitlilik ve onur ile geliştirildi.</span>
+    <!-- 3. MODÜLLER (Clean Bento Architecture) -->
+    <section id="moduller" class="py-20 sm:py-24 border-t border-white/[0.07]">
+      <div class="max-w-5xl mx-auto px-5 sm:px-8">
+        <div class="max-w-xl mb-14 space-y-2">
+          <p class="text-xs font-semibold text-indigoSoft uppercase tracking-wider">Uygulama İçi</p>
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
+            Dört temel deneyim, tek sade arayüz.
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <!-- Module 1 -->
+          <div class="editorial-card p-8 space-y-3">
+            <div class="w-10 h-10 rounded-2xl bg-indigo-500/15 text-indigoSoft flex items-center justify-center font-bold text-sm">01</div>
+            <h3 class="text-xl font-bold text-white">Trivia & Seviye Sistemi</h3>
+            <p class="text-sm text-[#8E8E93] leading-relaxed">
+              Tarih, popüler kültür, semboller, haklar ve terminoloji kategorilerinde 10 soruluk turlar. Doğru yanıtlarla XP topla, 5 can dengesiyle bilgini sına.
+            </p>
+          </div>
+
+          <!-- Module 2 -->
+          <div class="editorial-card p-8 space-y-3">
+            <div class="w-10 h-10 rounded-2xl bg-amber-500/15 text-[#FF9F0A] flex items-center justify-center font-bold text-sm">02</div>
+            <h3 class="text-xl font-bold text-white">Kuir Akademi</h3>
+            <p class="text-sm text-[#8E8E93] leading-relaxed">
+              Uzun makaleler yerine odaklanmış, kaydırılabilir bilgi kartları. Kuir tarihi, sağlık bilgisi ve temel kavramları kendi hızında öğren.
+            </p>
+          </div>
+
+          <!-- Module 3 -->
+          <div class="editorial-card p-8 space-y-3">
+            <div class="w-10 h-10 rounded-2xl bg-rose-500/15 text-[#FF375F] flex items-center justify-center font-bold text-sm">03</div>
+            <h3 class="text-xl font-bold text-white">Kuir Sinema Kataloğu</h3>
+            <p class="text-sm text-[#8E8E93] leading-relaxed">
+              Kült film ve dizilerin özetlerini, yönetmenlerini ve hangi dijital platformda yayınlandığını keşfet; izlediğin yapımların özel testlerini çöz.
+            </p>
+          </div>
+
+          <!-- Module 4 -->
+          <div class="editorial-card p-8 space-y-3">
+            <div class="w-10 h-10 rounded-2xl bg-emerald-500/15 text-[#30D158] flex items-center justify-center font-bold text-sm">04</div>
+            <h3 class="text-xl font-bold text-white">8 Onur Rozeti & Güvenli Alan</h3>
+            <p class="text-sm text-[#8E8E93] leading-relaxed">
+              Gerçek ad zorunluluğu olmadan profilini oluştur. 8 farklı Onur rozeti ve zamir seçenekleriyle kendini ifade et; nefret söylemine sıfır tolerans.
+            </p>
+          </div>
         </div>
       </div>
+    </section>
+
+    <!-- 4. DAYANIŞMA FONU (Editorial Feature Block) -->
+    <section id="dayanisma" class="py-20 sm:py-24 border-t border-white/[0.07]">
+      <div class="max-w-5xl mx-auto px-5 sm:px-8">
+        <div class="editorial-card p-8 sm:p-12 flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+          <div class="space-y-4 max-w-2xl">
+            <div class="inline-flex items-center gap-2 text-xs font-semibold text-[#FF375F]">
+              <span class="animate-heart-beat">♥</span>
+              <span>Toplumsal Dayanışma İlkesi</span>
+            </div>
+
+            <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-white leading-tight">
+              Aylık net gelirlerin <span class="text-gradient-pride">%10'u</span> Kuir Dostlarımıza Destek Fonu'na aktarılır.
+            </h2>
+
+            <p class="text-sm sm:text-base text-[#8E8E93] leading-relaxed">
+              Kullanıcılardan ekstra bağış talep edilmez. Biriken tutar 2.500 ₺ eşiğini aştığında Kaos GL, SPoD, Lambdaistanbul ve ÜniKuir gibi bağımsız dayanışma ağlarına aktarılır; limit altında kalırsa sıfırlanmadan sonraki aya devreder.
+            </p>
+          </div>
+
+          <div class="flex flex-col sm:flex-row lg:flex-col gap-3 flex-shrink-0">
+            <a href="destek-fonu.html" class="px-6 py-3.5 rounded-full text-xs font-bold bg-white text-black hover:bg-neutral-200 transition-colors text-center">
+              Simülatörü ve Şartları Gör
+            </a>
+            <a href="destek-fonu.html#transparency" class="px-6 py-3.5 rounded-full text-xs font-semibold bg-surface hover:bg-white/[0.12] text-white transition-colors text-center">
+              Şeffaflık Defteri
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. SADE SSS (FAQ) -->
+    <section id="sss" class="py-20 border-t border-white/[0.07]">
+      <div class="max-w-3xl mx-auto px-5 sm:px-8">
+        <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white mb-8">
+          Sıkça Sorulan Sorular
+        </h2>
+
+        <div class="space-y-3">
+          <div class="accordion-item editorial-card overflow-hidden">
+            <button type="button" class="accordion-trigger w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 cursor-pointer" aria-expanded="false">
+              <span class="text-sm sm:text-base font-bold text-white">QueerIQ ücretsiz mi?</span>
+              <svg class="accordion-icon w-4 h-4 text-[#8E8E93] transition-transform duration-300 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion-content-wrap">
+              <div class="accordion-content-inner px-5 sm:px-6 pb-5 sm:pb-6 text-xs sm:text-sm text-[#8E8E93] leading-relaxed">
+                Evet. Tüm trivia kategorilerine, Kuir Akademi ders kartlarına, Sinema rehberine ve haftalık çift oylamalarına ücretsiz erişebilirsiniz.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item editorial-card overflow-hidden">
+            <button type="button" class="accordion-trigger w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 cursor-pointer" aria-expanded="false">
+              <span class="text-sm sm:text-base font-bold text-white">Kişisel verilerim ve gizliliğim nasıl korunuyor?</span>
+              <svg class="accordion-icon w-4 h-4 text-[#8E8E93] transition-transform duration-300 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion-content-wrap">
+              <div class="accordion-content-inner px-5 sm:px-6 pb-5 sm:pb-6 text-xs sm:text-sm text-[#8E8E93] leading-relaxed">
+                Gerçek ad veya telefon numarası gerekmez. Tüm veriler şifreli bağlantılar (HTTPS/TLS) ve veritabanı izolasyonu (RLS) ile korunur; üçüncü taraflara satılmaz.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item editorial-card overflow-hidden">
+            <button type="button" class="accordion-trigger w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 cursor-pointer" aria-expanded="false">
+              <span class="text-sm sm:text-base font-bold text-white">Hesabımı ve verilerimi kalıcı olarak nasıl silebilirim?</span>
+              <svg class="accordion-icon w-4 h-4 text-[#8E8E93] transition-transform duration-300 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion-content-wrap">
+              <div class="accordion-content-inner px-5 sm:px-6 pb-5 sm:pb-6 text-xs sm:text-sm text-[#8E8E93] leading-relaxed">
+                Uygulama içinden <strong class="text-white">Profil &gt; Hesap ve Güvenlik &gt; Hesabımı Sil</strong> adımını kullanabilir veya <a href="mailto:queer-iq@enesefetokta.com" class="text-indigoSoft underline">queer-iq@enesefetokta.com</a> adresine yazabilirsiniz. Tüm kayıtlar en geç 24 saat içinde silinir.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. MINIMAL DOWNLOAD CLOSING -->
+    <section id="indir" class="py-20 border-t border-white/[0.07]">
+      <div class="max-w-3xl mx-auto px-5 sm:px-8 text-center space-y-6">
+        <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
+          Bugün keşfetmeye başla.
+        </h2>
+        <p class="text-sm sm:text-base text-[#8E8E93] max-w-lg mx-auto">
+          iOS 15.0+ ve Android 8.0+ cihazlar için ücretsiz indir.
+        </p>
+
+        <div class="pt-2 flex flex-wrap items-center justify-center gap-3.5">
+          <a href="#" onclick="alert('QueerIQ çok yakında Apple App Store\'da yayında!'); return false;" class="inline-flex items-center gap-3 px-6 py-3.5 rounded-2xl bg-white text-black hover:bg-neutral-200 transition-colors font-semibold">
+            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.63-.78 1.06-1.87.94-2.97-.93.04-2.02.63-2.66 1.4-.56.65-.99 1.77-.85 2.85 1.02.08 2.02-.55 2.57-1.28z"/>
+            </svg>
+            <div class="text-left">
+              <div class="text-[10px] font-semibold text-neutral-600 leading-none">App Store</div>
+              <div class="text-sm font-bold leading-tight">Çok Yakında</div>
+            </div>
+          </a>
+
+          <a href="#" onclick="alert('QueerIQ çok yakında Google Play Store\'da yayında!'); return false;" class="inline-flex items-center gap-3 px-6 py-3.5 rounded-2xl bg-card hover:bg-surface border border-white/[0.1] text-white transition-colors font-semibold">
+            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+              <path d="M3.609 1.814L13.793 12 3.61 22.186c-.378-.363-.61-.88-.61-1.46V3.273c0-.58.232-1.097.609-1.46zm11.242 11.244l2.456 2.456-11.97 6.84 9.514-9.296zm2.456-4.116l-2.456 2.456L5.337 2.1l11.97 6.842zm1.058 1.838l3.155 1.803c.895.512.895 1.344 0 1.856l-3.155 1.803-2.39-2.731 2.39-2.731z"/>
+            </svg>
+            <div class="text-left">
+              <div class="text-[10px] font-medium text-[#8E8E93] leading-none">Google Play</div>
+              <div class="text-sm font-bold leading-tight">Çok Yakında</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Minimal Footer -->
+  <footer class="border-t border-white/[0.07] py-10 text-xs text-[#8E8E93]">
+    <div class="max-w-5xl mx-auto px-5 sm:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2.5">
+        <img src="assets/icon.png" alt="QueerIQ" class="w-6 h-6 rounded-md border border-white/[0.12]">
+        <span class="font-bold text-white">QueerIQ</span>
+        <span>•</span>
+        <a href="mailto:queer-iq@enesefetokta.com" class="hover:text-white transition-colors">queer-iq@enesefetokta.com</a>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-center gap-5">
+        <a href="destek-fonu.html" class="text-rose-400 hover:underline">Destek Fonu</a>
+        <a href="privacy.html" class="hover:text-white transition-colors">Gizlilik Politikası</a>
+        <a href="terms.html" class="hover:text-white transition-colors">Kullanım Şartları</a>
+      </div>
+
+      <div>© 2026 QueerIQ</div>
     </div>
   </footer>
 
+  <!-- Base Engine -->
   <script src="script.js"></script>
+
+  <!-- Live Playground Engine (Trivia Deck, Academy Cards & Ship Poll) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Mini 3-Question Trivia Deck
+      const questions = [
+        {
+          q: "1969 yılında modern LGBTİ+ hakları hareketinin dönüm noktası sayılan Stonewall direnişi hangi şehirde başladı?",
+          options: ["Berlin", "New York (Greenwich Village)", "Londra", "San Francisco"],
+          correct: 1,
+          fact: "28 Haziran 1969'da New York'taki Stonewall Inn direnişi, küresel Onur yürüyüşlerinin ilham kaynağı oldu."
+        },
+        {
+          q: "1990 yılında Dünya Sağlık Örgütü (DSÖ) hangi tarihi kararı aldı?",
+          options: [
+            "Onur Ayı'nı resmi tatil ilan etti",
+            "Eşcinselliği hastalıklar sınıflandırmasından çıkardı",
+            "İlk küresel sağlık fonunu kurdu",
+            "Gökkuşağı bayrağını tescilledi"
+          ],
+          correct: 1,
+          fact: "17 Mayıs 1990'da DSÖ eşcinselliği ICD hastalık listesinden çıkardı; bu tarih Uluslararası Homofobi, Bifobi ve Transfobi Karşıtlığı Günü olarak anılır."
+        },
+        {
+          q: "2017 yılında En İyi Film Oscar'ını kazanan ilk LGBTİ+ temalı yapım hangisidir?",
+          options: ["Call Me by Your Name", "Carol", "Moonlight", "Portrait of a Lady on Fire"],
+          correct: 2,
+          fact: "Barry Jenkins'in yönettiği Moonlight (2016), En İyi Film Oscar'ını kazanan ilk kuir film olarak sinema tarihine geçti."
+        }
+      ];
+
+      let qIdx = 0;
+      let xp = 0;
+      let answered = false;
+
+      const stepLabel = document.getElementById('liveStepLabel');
+      const xpCounter = document.getElementById('liveXpCounter');
+      const progressBar = document.getElementById('liveProgressBar');
+      const qText = document.getElementById('liveQuestionText');
+      const optContainer = document.getElementById('liveOptionsContainer');
+      const factBox = document.getElementById('liveFactBox');
+      const nextBtn = document.getElementById('liveNextBtn');
+
+      function renderQuestion() {
+        const current = questions[qIdx];
+        answered = false;
+        stepLabel.textContent = `Soru ${qIdx + 1} / ${questions.length}`;
+        progressBar.style.width = `${((qIdx + 1) / questions.length) * 100}%`;
+        qText.textContent = current.q;
+        factBox.classList.add('hidden');
+        nextBtn.classList.add('hidden');
+        optContainer.innerHTML = '';
+
+        current.options.forEach((opt, i) => {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'pill-choice w-full px-4 py-3 rounded-2xl bg-surface hover:bg-white/[0.12] border border-white/[0.06] text-left text-xs sm:text-sm font-semibold text-white flex items-center justify-between cursor-pointer';
+          btn.innerHTML = `<span>${opt}</span><span class="text-xs text-[#8E8E93]"></span>`;
+
+          btn.addEventListener('click', () => {
+            if (answered) return;
+            answered = true;
+            const allBtns = optContainer.querySelectorAll('button');
+
+            if (i === current.correct) {
+              xp += 10;
+              xpCounter.textContent = `${xp} XP`;
+              btn.className = 'pill-choice w-full px-4 py-3 rounded-2xl bg-[#30D158]/15 border border-[#30D158]/40 text-left text-xs sm:text-sm font-bold text-[#30D158] flex items-center justify-between';
+              btn.lastElementChild.textContent = '✓ +10 XP';
+            } else {
+              btn.className = 'pill-choice w-full px-4 py-3 rounded-2xl bg-[#FF453A]/15 border border-[#FF453A]/40 text-left text-xs sm:text-sm font-bold text-[#FF453A] flex items-center justify-between';
+              btn.lastElementChild.textContent = '✕';
+              allBtns[current.correct].className = 'pill-choice w-full px-4 py-3 rounded-2xl bg-[#30D158]/15 border border-[#30D158]/40 text-left text-xs sm:text-sm font-bold text-[#30D158] flex items-center justify-between';
+              allBtns[current.correct].lastElementChild.textContent = '✓';
+            }
+
+            factBox.textContent = current.fact;
+            factBox.classList.remove('hidden');
+            nextBtn.textContent = qIdx < questions.length - 1 ? 'Sonraki Soru →' : 'Turu Yeniden Başlat';
+            nextBtn.classList.remove('hidden');
+          });
+
+          optContainer.appendChild(btn);
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+          if (qIdx < questions.length - 1) {
+            qIdx++;
+          } else {
+            qIdx = 0;
+            xp = 0;
+            xpCounter.textContent = '0 XP';
+          }
+          renderQuestion();
+        });
+        renderQuestion();
+      }
+
+      // 2. Academy Cards Deck
+      const cards = [
+        {
+          title: "Gökkuşağı Bayrağının Doğuşu (1978)",
+          body: "Sanatçı ve aktivist Gilbert Baker tarafından San Francisco Onur Yürüyüşü için tasarlanan ilk bayrak, her biri farklı bir değeri temsil eden 8 renkten oluşuyordu."
+        },
+        {
+          title: "Marsha P. Johnson & Sylvia Rivera",
+          body: "New York'ta evsiz kuir gençlere barınma ve destek sağlamak amacıyla STAR (Street Transvestite Action Revolutionaries) dayanışma ağını kurdular."
+        },
+        {
+          title: "Lubunca Altkültür Sözlüğü",
+          body: "Türkiye'de kuir topluluğun yüzyıllara dayanan dayanışma ve kendini ifade etme pratiğinden doğan, zengin bir kültürel hafıza taşıyıcısıdır."
+        }
+      ];
+
+      let cIdx = 0;
+      const cTitle = document.getElementById('academyCardTitle');
+      const cBody = document.getElementById('academyCardBody');
+      const cIndex = document.getElementById('academyCardIndex');
+      const nextCardBtn = document.getElementById('nextAcademyCardBtn');
+
+      if (nextCardBtn) {
+        nextCardBtn.addEventListener('click', () => {
+          cIdx = (cIdx + 1) % cards.length;
+          cTitle.textContent = cards[cIdx].title;
+          cBody.textContent = cards[cIdx].body;
+          cIndex.textContent = `${cIdx + 1} / ${cards.length}`;
+        });
+      }
+
+      // 3. Ship Arena Poll
+      let votesA = 674;
+      let votesB = 574;
+      let voted = false;
+
+      const shipBtns = document.querySelectorAll('.ship-vote-btn');
+      const pctA = document.getElementById('shipPctA');
+      const pctB = document.getElementById('shipPctB');
+      const totalLabel = document.getElementById('shipTotalVotes');
+      const voteHint = document.getElementById('shipVoteHint');
+
+      shipBtns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          if (voted) return;
+          voted = true;
+          const choice = btn.getAttribute('data-ship');
+          if (choice === 'a') votesA++;
+          else votesB++;
+
+          const total = votesA + votesB;
+          const pA = Math.round((votesA / total) * 100);
+          const pB = 100 - pA;
+
+          pctA.textContent = `%${pA}`;
+          pctB.textContent = `%${pB}`;
+          totalLabel.textContent = `${total.toLocaleString('tr-TR')} oy`;
+          btn.classList.add('border-indigo-500/50', 'bg-indigo-500/15');
+          voteHint.textContent = 'Oyun kaydedildi — teşekkürler!';
+          voteHint.classList.add('text-[#30D158]');
+        });
+      });
+    });
+  </script>
 </body>
 </html>
-

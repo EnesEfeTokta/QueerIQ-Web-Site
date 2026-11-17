@@ -1,273 +1,228 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gizlilik Politikası - QueerIQ</title>
-  <meta name="description" content="QueerIQ Gizlilik Politikası. Uçtan uca şifreleme, anonim profil güvencesi, veri satışı yapmama taahhüdü ve GDPR/KVKK veri silme hakları.">
-  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <title>Kullanım Şartları ve Topluluk Kuralları — QueerIQ</title>
+  <meta name="description" content="QueerIQ Kullanım Şartları, Hizmet Koşulları ve Topluluk Kuralları. Güvenli alan taahhüdü, nefret söylemine sıfır tolerans ve kullanıcı hakları.">
+  <meta name="author" content="Enes Efe Tokta">
+  <meta name="theme-color" content="#0A0A0C">
+  <link rel="canonical" href="https://queer-iq.enesefetokta.com/terms.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://queer-iq.enesefetokta.com/terms.html">
+  <meta property="og:title" content="Kullanım Şartları ve Topluluk Kuralları — QueerIQ">
+  <meta property="og:description" content="QueerIQ Topluluk İlkeleri ve Hizmet Şartları. Sıfır tolerans ve kapsayıcı öğrenme ortamı kuralları.">
+  <meta property="og:image" content="https://queer-iq.enesefetokta.com/assets/icon.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/icon.png">
+  <link rel="apple-touch-icon" href="assets/icon.png">
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              base: '#0A0A0C',
+              card: '#1C1C1E',
+              surface: '#2C2C2E',
+              indigo: '#6366F1',
+              indigoLight: '#818CF8',
+              rose: '#FF375F',
+              emerald: '#30D158'
+            }
+          },
+          fontFamily: {
+            sans: ['-apple-system', 'BlinkMacSystemFont', '"SF Pro Display"', '"SF Pro Text"', 'Inter', 'Segoe UI', 'Roboto', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Stylesheet -->
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="bg-[#0A0A0C] text-white antialiased selection:bg-indigo-500/30 selection:text-indigo-200">
 
   <!-- Top Pride Accent Ribbon -->
   <div class="top-pride-ribbon" aria-hidden="true"></div>
 
-  <!-- Navigation Bar -->
-  <nav class="navbar" role="navigation" aria-label="Ana Navigasyon">
-    <div class="container nav-container">
-      <a href="index.html" class="brand">
-        <div class="brand-icon-wrap">
-          <img src="assets/icon.png" alt="QueerIQ Logo">
+  <!-- Header -->
+  <header class="sticky top-0 z-50 w-full bg-[#0A0A0C]/85 backdrop-blur-xl border-b border-white/[0.08]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-18 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-9 h-9 rounded-[10px] overflow-hidden border border-white/[0.12] transition-transform group-hover:scale-105">
+          <img src="assets/icon.png" alt="QueerIQ" class="w-full h-full object-cover">
         </div>
-        <span class="brand-name">
-          QueerIQ<span class="brand-dot" aria-hidden="true"></span>
-        </span>
+        <div class="flex flex-col">
+          <span class="text-base sm:text-lg font-extrabold tracking-tight text-white">QueerIQ</span>
+          <span class="text-[11px] font-medium text-[#8E8E93]">Kullanım Şartları</span>
+        </div>
       </a>
 
-      <ul class="nav-links">
-        <li><a href="index.html#features" class="nav-link" data-i18n="nav.features">Özellikler</a></li>
-        <li><a href="index.html#duels" class="nav-link" data-i18n="nav.duels">Düello & Öğrenme</a></li>
-        <li><a href="index.html#safety" class="nav-link" data-i18n="nav.safety">Güvenlik & Gizlilik</a></li>
-        <li><a href="terms.html" class="nav-link" data-i18n="legal.terms_title">Kullanım Şartları</a></li>
-      </ul>
-
-      <div class="nav-actions">
-        <!-- Language Switcher Pill -->
-        <div class="lang-switch" role="group" aria-label="Dil Seçimi">
-          <button class="lang-btn active" data-lang="tr" aria-pressed="true">TR</button>
-          <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
-        </div>
-
-        <a href="index.html#download" class="btn-primary">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-            <polyline points="7 10 12 15 17 10"></polyline>
-            <line x1="12" y1="15" x2="12" y2="3"></line>
-          </svg>
-          <span data-i18n="nav.download">Uygulamayı Keşfet</span>
+      <nav class="flex items-center gap-2 sm:gap-3 text-xs font-semibold">
+        <a href="privacy.html" class="hidden sm:inline-block px-3 py-1.5 rounded-lg text-[#8E8E93] hover:text-white transition-colors">
+          Gizlilik Politikası
         </a>
-
-        <button class="mobile-toggle" id="mobileNavToggle" aria-label="Menüyü Aç/Kapat">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="3" y1="12" x2="21" y2="12"></line>
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <line x1="3" y1="18" x2="21" y2="18"></line>
+        <a href="destek-fonu.html" class="hidden sm:inline-block px-3 py-1.5 rounded-lg text-rose-400 hover:text-rose-300 transition-colors">
+          Destek Fonu
+        </a>
+        <a href="index.html" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-[#1C1C1E] hover:bg-[#2C2C2E] border border-white/[0.08] text-white transition-colors">
+          <svg class="w-3.5 h-3.5 text-[#818CF8]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
           </svg>
-        </button>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Mobile Drawer -->
-  <div class="mobile-drawer" id="mobileDrawer">
-    <a href="index.html" class="nav-link" data-i18n="legal.page_home">Ana Sayfa</a>
-    <a href="index.html#features" class="nav-link" data-i18n="nav.features">Özellikler</a>
-    <a href="index.html#safety" class="nav-link" data-i18n="nav.safety">Güvenlik & Gizlilik</a>
-    <a href="terms.html" class="nav-link" data-i18n="legal.terms_title">Kullanım Şartları</a>
-    <div class="mobile-drawer-bottom">
-      <div class="lang-switch" role="group" aria-label="Dil Seçimi">
-        <button class="lang-btn active" data-lang="tr">TR</button>
-        <button class="lang-btn" data-lang="en">EN</button>
-      </div>
-      <a href="index.html#download" class="btn-primary" data-i18n="nav.download">Uygulamayı Keşfet</a>
-    </div>
-  </div>
-
-  <!-- Privacy Main Content -->
-  <main class="legal-page-main">
-    <div class="legal-page-container">
-      <!-- Breadcrumb Bar -->
-      <nav class="breadcrumb-bar" aria-label="Breadcrumb">
-        <a href="index.html" data-i18n="legal.page_home">Ana Sayfa</a>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="9 18 15 12 9 6"></polyline>
-        </svg>
-        <span class="current" data-i18n="privacy.title">Gizlilik Politikası</span>
+          <span>Ana Sayfa</span>
+        </a>
       </nav>
+    </div>
+  </header>
+
+  <main class="py-12 sm:py-16">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
 
       <!-- Document Header -->
-      <header class="legal-doc-header">
-        <h1 class="legal-doc-title" data-i18n="privacy.main_heading">
-          Gizlilik Politikası ve Kişisel Veri Koruma
-        </h1>
-        <div class="legal-doc-meta">
-          <div class="legal-doc-meta-left">
-            <span class="legal-meta-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10"></circle>
-                <polyline points="12 6 12 12 16 14"></polyline>
-              </svg>
-              <span data-i18n="legal.last_updated">Son Güncelleme: 2026</span>
-            </span>
-            <span class="legal-meta-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-              </svg>
-              <span data-i18n="privacy.gdpr_label">GDPR & KVKK Uyumlu</span>
-            </span>
-          </div>
-
-          <a href="terms.html" class="legal-switch-pill">
-            <span data-i18n="legal.switch_to_terms">Kullanım Şartları</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </a>
+      <div class="mb-8 space-y-3">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1C1C1E] border border-white/[0.08] text-xs font-medium text-[#8E8E93]">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#818CF8]"></span>
+          <span>Son Güncelleme: Kasım 2026</span>
         </div>
-      </header>
 
-      <!-- Paper Document Card -->
-      <article class="legal-paper-card">
-        <!-- Section 1 -->
-        <section class="legal-section-block">
-          <h2 class="legal-section-title">
-            <span class="legal-section-number">1</span>
-            <span data-i18n="privacy.s1_title">1. Uçtan Uca Veri Güvenliği & Şifreleme</span>
-          </h2>
-          <p class="legal-section-paragraph" data-i18n="privacy.s1_text">
-            Kullanıcı şifreleriniz ve kişisel verileriniz modern endüstri standardı şifreleme ve güvenli Supabase altyapısıyla korunur. Parolalarınız hiçbir zaman açık metin olarak saklanmaz veya görüntülenemez.
-          </p>
-          <div class="legal-callout-box success" data-i18n="privacy.s1_callout">
-            Kimlik doğrulama işlemleri şifrelenmiş oturum anahtarları (tokens) ile yönetilir; veritabanı düzeyinde satır bazlı erişim denetimi (Row Level Security) aktif uygulanır.
-          </div>
-        </section>
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
+          Kullanım Şartları & Topluluk Kuralları
+        </h1>
 
-        <!-- Section 2 -->
-        <section class="legal-section-block">
-          <h2 class="legal-section-title">
-            <span class="legal-section-number">2</span>
-            <span data-i18n="privacy.s2_title">2. Kişisel Veri Satışı Kesinlikle Yapılmaz</span>
-          </h2>
-          <p class="legal-section-paragraph" data-i18n="privacy.s2_text">
-            Kişisel bilgileriniz, trivia yanıtlarınız, zamirleriniz veya e-postanız hiçbir koşulda üçüncü taraflara, veri simsarlarına veya reklam ağlarına satılmaz. Gizliliğiniz tavizsiz temel ilkemizdir.
-          </p>
-          <p class="legal-section-paragraph" data-i18n="privacy.s2_extra">
-            Uygulamamız reklam takipçisi içermez. Platformumuzun gelir modeli asla kullanıcıların kişisel verilerini ticarileştirmek üzerine kurulmamıştır ve kurulmayacaktır.
-          </p>
-        </section>
+        <p class="text-sm sm:text-base text-[#8E8E93] leading-relaxed">
+          QueerIQ mobil uygulamasını ve ilişkili hizmetleri kullanarak aşağıdaki şartları ve topluluk standartlarını kabul etmiş sayılırsınız. Amacımız tüm kullanıcılar için güvenli, güçlendirici ve kapsayıcı bir öğrenme ortamı sunmaktır.
+        </p>
 
-        <!-- Section 3 -->
-        <section class="legal-section-block">
-          <h2 class="legal-section-title">
-            <span class="legal-section-number">3</span>
-            <span data-i18n="privacy.s3_title">3. Tam Kontrol ve Tek Tıkla Veri Silme Hakkı (GDPR / KVKK)</span>
-          </h2>
-          <p class="legal-section-paragraph" data-i18n="privacy.s3_text">
-            Kullanıcılar diledikleri zaman profil tercihlerini güncelleyebilir veya hesaplarının ve ilişkili tüm kayıtlarının sistemden kalıcı olarak silinmesini talep edebilir (GDPR & KVKK uyumluluğu).
-          </p>
-          <p class="legal-section-paragraph" data-i18n="privacy.s3_extra">
-            Hesap ayarlarınızdan 'Hesabımı Sil' butonuna bastığınız anda tüm quiz ilerlemeleriniz, puanlarınız, takma adınız ve ilişkili e-posta kaydınız geri döndürülemez biçimde kalıcı olarak imha edilir.
-          </p>
-        </section>
-
-        <!-- Section 4 -->
-        <section class="legal-section-block">
-          <h2 class="legal-section-title">
-            <span class="legal-section-number">4</span>
-            <span data-i18n="privacy.s4_title">4. Anonim Profil & Kimlik Mahremiyeti</span>
-          </h2>
-          <p class="legal-section-paragraph" data-i18n="privacy.s4_text">
-            QueerIQ profilinizde gerçek adınızı veya kişisel telefon numaranızı vermek zorunda değilsiniz. Yalnızca seçtiğiniz bir gösterim adı ve zamirleriniz ile anonim olarak var olabilirsiniz.
-          </p>
-          <div class="legal-callout-box" data-i18n="privacy.s4_callout">
-            Kullanıcılarımızın fiziksel ve çevrim içi güvenliği her şeyden önce gelir. Gerçek kimliğinizi saklama hakkınız platformumuzda koşulsuz korunur.
-          </div>
-        </section>
-
-        <!-- Section 5 -->
-        <section class="legal-section-block">
-          <h2 class="legal-section-title">
-            <span class="legal-section-number">5</span>
-            <span data-i18n="privacy.s5_title">5. Anonim Telemetri & Çerez Politikası</span>
-          </h2>
-          <p class="legal-section-paragraph" data-i18n="privacy.s5_text">
-            Yalnızca uygulamanın kararlılığını sağlamak, hata raporlarını gidermek ve kullanıcı deneyimini optimize etmek amacıyla anonimleştirilmiş teknik veriler işlenir. Bu veriler kimliğinizle eşleştirilemez.
-          </p>
-        </section>
-
-        <!-- Section 6 -->
-        <section class="legal-section-block">
-          <h2 class="legal-section-title">
-            <span class="legal-section-number">6</span>
-            <span data-i18n="privacy.s6_title">6. Veri Sorumlusu ve İletişim</span>
-          </h2>
-          <p class="legal-section-paragraph" data-i18n="privacy.s6_text">
-            Kişisel verilerinizin korunması veya gizlilik haklarınızla ilgili her türlü soru ve talebiniz için destek kanallarımız üzerinden QueerIQ veri güvenliği ekibiyle doğrudan iletişime geçebilirsiniz.
-          </p>
-        </section>
-      </article>
-
-      <!-- Bottom Nav Actions -->
-      <div class="legal-doc-bottom-actions">
-        <a href="index.html" class="btn-secondary">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="19" y1="12" x2="5" y2="12"></line>
-            <polyline points="12 19 5 12 12 5"></polyline>
-          </svg>
-          <span data-i18n="legal.btn_back_home">Ana Sayfa</span>
-        </a>
-
-        <a href="terms.html" class="btn-primary">
-          <span data-i18n="legal.switch_to_terms">Kullanım Şartları</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-            <polyline points="12 5 19 12 12 19"></polyline>
-          </svg>
-        </a>
+        <!-- Quick Anchor Pills -->
+        <div class="pt-2 flex flex-wrap gap-2 text-xs font-medium">
+          <a href="#service-nature" class="px-3 py-1.5 rounded-full bg-[#1C1C1E] hover:bg-[#2C2C2E] border border-white/[0.08] text-slate-300 transition-colors">1. Hizmet Kapsamı</a>
+          <a href="#community-guidelines" class="px-3 py-1.5 rounded-full bg-rose-500/15 hover:bg-rose-500/20 border border-rose-500/30 text-rose-300 transition-colors">2. Güvenli Alan</a>
+          <a href="#intellectual-property" class="px-3 py-1.5 rounded-full bg-[#1C1C1E] hover:bg-[#2C2C2E] border border-white/[0.08] text-slate-300 transition-colors">3. Fikri Mülkiyet</a>
+          <a href="#termination" class="px-3 py-1.5 rounded-full bg-[#1C1C1E] hover:bg-[#2C2C2E] border border-white/[0.08] text-slate-300 transition-colors">4. Hesap İşlemleri</a>
+          <a href="#disclaimer" class="px-3 py-1.5 rounded-full bg-[#1C1C1E] hover:bg-[#2C2C2E] border border-white/[0.08] text-slate-300 transition-colors">5. Sorumluluk</a>
+        </div>
       </div>
+
+      <!-- Main Legal Card -->
+      <article class="surface-card p-6 sm:p-10 space-y-9 legal-prose">
+
+        <!-- 1 -->
+        <section id="service-nature" class="space-y-3.5">
+          <h2 class="flex items-center gap-2.5 text-lg sm:text-xl font-bold text-white">
+            <span class="w-6 h-6 rounded-lg bg-indigo-500/15 text-[#818CF8] text-xs font-bold inline-flex items-center justify-center flex-shrink-0">1</span>
+            <span>Hizmetin Niteliği ve Kapsamı</span>
+          </h2>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            QueerIQ; kuir tarihi, sineması, sanatı, temel insan hakları mücadeleleri ve kavramsal terminoloji alanında eğitim, farkındalık ve eğlence sunan interaktif bir mobil kültür ve trivia platformudur.
+          </p>
+          <ul class="space-y-2 text-sm text-slate-300 list-disc pl-5 leading-relaxed">
+            <li><strong class="text-white">Trivia Turları:</strong> 10 soruluk bilgi yarışmaları, XP kazanımı ve seviye ilerlemesi.</li>
+            <li><strong class="text-white">Kuir Akademi:</strong> Tarih, sağlık, kültür ve temel kavramları öğreten kaydırılabilir bilgi kartları.</li>
+            <li><strong class="text-white">Kuir Sinema & Yapımlar:</strong> Kült film ve dizilerin özetleri, yayın platformu bilgileri ve yapımlara özel trivia testleri.</li>
+            <li><strong class="text-white">Haftalık Çift Arenası:</strong> Topluluk üyelerinin katıldığı haftalık çift oylamaları ve 8 farklı Onur rozetiyle profil kişiselleştirme.</li>
+          </ul>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            QueerIQ, aylık net gelirlerinin %10'unu bağımsız kuir gençlik ve dayanışma projelerine aktaran <a href="destek-fonu.html" class="text-rose-400 hover:underline font-semibold">Kuir Dostlarımıza Destek Fonu</a> ile toplumsal dayanışmayı destekler.
+          </p>
+        </section>
+
+        <!-- 2 -->
+        <section id="community-guidelines" class="space-y-3.5 pt-7 border-t border-white/[0.08]">
+          <h2 class="flex items-center gap-2.5 text-lg sm:text-xl font-bold text-white">
+            <span class="w-6 h-6 rounded-lg bg-rose-500/20 text-[#FF375F] text-xs font-bold inline-flex items-center justify-center flex-shrink-0">2</span>
+            <span>Kullanıcı Davranış Kuralları & Güvenli Alan</span>
+          </h2>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            QueerIQ, toksisiteden arındırılmış kapsayıcı bir dijital alandır. Platformumuzda aşağıdaki davranışlara karşı <strong class="text-white">sıfır tolerans</strong> politikası uygulanır:
+          </p>
+          <ul class="space-y-2 text-sm text-slate-300 list-disc pl-5 leading-relaxed">
+            <li><strong class="text-white">Nefret Söylemi ve Ayrımcılık:</strong> Cinsel yönelim, cinsiyet kimliği, ırk, etnik köken, inanç, engellilik veya yaş temelinde ayrımcılık ve aşağılama içeren ifadeler kesinlikle yasaktır.</li>
+            <li><strong class="text-white">Taciz ve Siber Zorbalık:</strong> Diğer kullanıcıları hedef gösteren, rahatsız eden veya baskı oluşturan eylemler yasaktır.</li>
+            <li><strong class="text-white">Rıza Dışı İfşa (Outing):</strong> Başka bir kullanıcının kimliğini veya kişisel bilgilerini rızası olmaksızın açıklamak kabul edilemez.</li>
+            <li><strong class="text-white">Uygunsuz Kullanıcı Adları:</strong> Müstehcen, şiddet öven, nefret söylemi barındıran veya başkasını taklit eden rumuz kullanımı yasaktır.</li>
+          </ul>
+          <div class="p-4 rounded-2xl bg-[#2C2C2E] text-xs text-slate-200 leading-relaxed">
+            <strong class="text-[#FF375F]">Sıfır Tolerans İlkesi:</strong> Kuralları ihlal eden hesaplar ön ihtar yapılmaksızın kalıcı olarak kapatılır. Kullanıcılar uygulama içindeki <em>Soruyu Bildir</em> özelliğiyle hatalı veya uygunsuz içerikleri anında bildirebilir.
+          </div>
+        </section>
+
+        <!-- 3 -->
+        <section id="intellectual-property" class="space-y-3.5 pt-7 border-t border-white/[0.08]">
+          <h2 class="flex items-center gap-2.5 text-lg sm:text-xl font-bold text-white">
+            <span class="w-6 h-6 rounded-lg bg-indigo-500/15 text-[#818CF8] text-xs font-bold inline-flex items-center justify-center flex-shrink-0">3</span>
+            <span>Fikri Mülkiyet ve İçerik Hakları</span>
+          </h2>
+          <ul class="space-y-2 text-sm text-slate-300 list-disc pl-5 leading-relaxed">
+            <li>QueerIQ adı, logosu, arayüz tasarımları, yazılım kodları ve özgün içerik arşivinin tüm fikri mülkiyet hakları QueerIQ ve geliştiricisi <strong class="text-white">Enes Efe Tokta</strong>'ya aittir.</li>
+            <li>Sorular ve eğitim kartları açık tarihi belgeler, akademik yayınlar ve topluluk hafızası referans alınarak derlenmiştir.</li>
+            <li>İçeriklerin ticari amaçla izinsiz kopyalanması veya otomatik araçlarla (scraping) çekilmesi yasaktır; eğitim amaçlı alıntılar kaynak gösterilerek yapılabilir.</li>
+          </ul>
+        </section>
+
+        <!-- 4 -->
+        <section id="termination" class="space-y-3.5 pt-7 border-t border-white/[0.08]">
+          <h2 class="flex items-center gap-2.5 text-lg sm:text-xl font-bold text-white">
+            <span class="w-6 h-6 rounded-lg bg-indigo-500/15 text-[#818CF8] text-xs font-bold inline-flex items-center justify-center flex-shrink-0">4</span>
+            <span>Hesap Kapatma ve Askıya Alma Şartları</span>
+          </h2>
+          <ul class="space-y-2 text-sm text-slate-300 list-disc pl-5 leading-relaxed">
+            <li>Güvenli alan kurallarının ihlali, bot kullanımı veya XP/oylama manipülasyonu tespit edildiğinde hesaplar geçici olarak askıya alınabilir veya kalıcı olarak kapatılabilir.</li>
+            <li>Kullanıcılar istedikleri her an hesaplarını ve ilişkili tüm verilerini uygulama içinden veya <a href="privacy.html#deletion" class="text-[#818CF8] underline font-semibold">Gizlilik Politikası</a> sayfasında belirtilen e-posta yoluyla kalıcı olarak sildirebilir.</li>
+          </ul>
+        </section>
+
+        <!-- 5 -->
+        <section id="disclaimer" class="space-y-3.5 pt-7 border-t border-white/[0.08]">
+          <h2 class="flex items-center gap-2.5 text-lg sm:text-xl font-bold text-white">
+            <span class="w-6 h-6 rounded-lg bg-indigo-500/15 text-[#818CF8] text-xs font-bold inline-flex items-center justify-center flex-shrink-0">5</span>
+            <span>Sorumluluk Reddi ve Güncellemeler</span>
+          </h2>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            QueerIQ, hizmeti <em class="text-slate-200">"olduğu gibi"</em> (as-is) sunar; içerik doğruluğu ve kesintisiz erişim için makul tüm teknik özen gösterilir. Bu şartlar yeni özellikler veya yasal düzenlemeler doğrultusunda güncellenebilir ve bu sayfada yayımlandığı anda yürürlüğe girer.
+          </p>
+        </section>
+
+        <!-- 6 -->
+        <section id="terms-contact" class="space-y-3.5 pt-7 border-t border-white/[0.08]">
+          <h2 class="flex items-center gap-2.5 text-lg sm:text-xl font-bold text-white">
+            <span class="w-6 h-6 rounded-lg bg-indigo-500/15 text-[#818CF8] text-xs font-bold inline-flex items-center justify-center flex-shrink-0">6</span>
+            <span>İletişim ve Geri Bildirim</span>
+          </h2>
+          <div class="p-4 rounded-2xl bg-[#2C2C2E] text-xs space-y-1.5 text-slate-300">
+            <div><strong class="text-white">Uygulama:</strong> QueerIQ</div>
+            <div><strong class="text-white">Geliştirici:</strong> Enes Efe Tokta</div>
+            <div><strong class="text-white">E-posta:</strong> <a href="mailto:queer-iq@enesefetokta.com" class="text-[#818CF8] underline">queer-iq@enesefetokta.com</a></div>
+            <div><strong class="text-white">Gizlilik Politikası:</strong> <a href="privacy.html" class="text-[#818CF8] underline">https://queer-iq.enesefetokta.com/privacy.html</a></div>
+          </div>
+        </section>
+
+      </article>
     </div>
   </main>
 
   <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-top">
-        <div class="footer-brand-col">
-          <a href="index.html" class="brand">
-            <div class="brand-icon-wrap">
-              <img src="assets/icon.png" alt="QueerIQ Logo">
-            </div>
-            <span class="brand-name">QueerIQ<span class="brand-dot" aria-hidden="true"></span></span>
-          </a>
-          <p class="footer-desc" data-i18n="footer.brand_desc">
-            Kuir kültürünü, tarihini ve dayanışmasını interaktif trivia ve mikro-öğrenme yoluyla herkes için güvenli kılan modern platform.
-          </p>
-        </div>
-
-        <div>
-          <div class="footer-col-title" data-i18n="footer.col_product">Ürün</div>
-          <ul class="footer-list">
-            <li><a href="index.html#features" class="footer-link" data-i18n="nav.features">Özellikler</a></li>
-            <li><a href="index.html#duels" class="footer-link" data-i18n="nav.duels">Düello & Öğrenme</a></li>
-            <li><a href="index.html#download" class="footer-link" data-i18n="nav.download">Uygulama</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <div class="footer-col-title" data-i18n="footer.col_safety">Güvenlik & İlkeler</div>
-          <ul class="footer-list">
-            <li><a href="index.html#safety" class="footer-link" data-i18n="nav.safety">Güvenlik İlkeleri</a></li>
-            <li><a href="terms.html" class="footer-link" data-i18n="footer.link_guidelines">Topluluk Kuralları</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <div class="footer-col-title" data-i18n="footer.col_legal">Yasal Belgeler</div>
-          <ul class="footer-list">
-            <li><a href="terms.html" class="footer-link" data-i18n="footer.link_terms">Kullanım Şartları</a></li>
-            <li><a href="privacy.html" class="footer-link" data-i18n="footer.link_privacy">Gizlilik Politikası</a></li>
-          </ul>
-        </div>
+  <footer class="border-t border-white/[0.08] py-10 text-xs text-[#8E8E93]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2.5">
+        <img src="assets/icon.png" alt="QueerIQ" class="w-6 h-6 rounded-md border border-white/[0.12]">
+        <span class="font-bold text-white">QueerIQ</span>
+        <span>•</span>
+        <span>© 2026</span>
       </div>
-
-      <div class="footer-bottom">
-        <div data-i18n="footer.copy">© 2026 QueerIQ. Tüm hakları saklıdır.</div>
-        <div class="footer-pride-mark">
-          <span class="footer-pride-bar" aria-hidden="true"></span>
-          <span data-i18n="footer.pride_tag">Eşitlik, çeşitlilik ve onur ile geliştirildi.</span>
-        </div>
+      <div class="flex flex-wrap items-center justify-center gap-5">
+        <a href="index.html" class="hover:text-white transition-colors">Ana Sayfa</a>
+        <a href="destek-fonu.html" class="text-rose-400 hover:underline">Destek Fonu</a>
+        <a href="privacy.html" class="hover:text-white transition-colors">Gizlilik Politikası</a>
+        <a href="terms.html" class="text-white font-semibold">Kullanım Şartları</a>
       </div>
     </div>
   </footer>
@@ -275,4 +230,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
