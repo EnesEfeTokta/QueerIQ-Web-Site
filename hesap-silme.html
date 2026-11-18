@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hesap ve Veri Silme Talebi — QueerIQ</title>
+  <meta name="description" content="QueerIQ (Enes Efe Tokta) mobil uygulaması hesap ve kişisel veri silme talimatları. Uygulama içinden veya web/e-posta üzerinden hesabınızı kalıcı olarak silme adımları, silinen veri türleri ve ek saklama süreleri.">
+  <meta name="author" content="Enes Efe Tokta">
+  <meta name="theme-color" content="#0A0A0C">
+  <link rel="canonical" href="https://queer-iq.enesefetokta.com/hesap-silme.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://queer-iq.enesefetokta.com/hesap-silme.html">
+  <meta property="og:title" content="Hesap ve Veri Silme Talebi — QueerIQ">
+  <meta property="og:description" content="QueerIQ hesabınızı ve ilişkili tüm verilerinizi kalıcı olarak silmek için adım adım talimatlar, veri türleri ve saklama süreleri.">
+  <meta property="og:image" content="https://queer-iq.enesefetokta.com/assets/icon.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/icon.png">
+  <link rel="apple-touch-icon" href="assets/icon.png">
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              base: '#0A0A0C',
+              card: '#1C1C1E',
+              surface: '#2C2C2E',
+              indigo: '#6366F1',
+              indigoLight: '#818CF8',
+              rose: '#FF375F',
+              emerald: '#30D158'
+            }
+          },
+          fontFamily: {
+            sans: ['-apple-system', 'BlinkMacSystemFont', '"SF Pro Display"', '"SF Pro Text"', 'Inter', 'Segoe UI', 'Roboto', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#0A0A0C] text-white antialiased selection:bg-indigo-500/30 selection:text-indigo-200">
+
+  <!-- Top Pride Accent Ribbon -->
+  <div class="top-pride-ribbon" aria-hidden="true"></div>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 w-full bg-[#0A0A0C]/85 backdrop-blur-xl border-b border-white/[0.08]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-18 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-9 h-9 rounded-[10px] overflow-hidden border border-white/[0.12] transition-transform group-hover:scale-105">
+          <img src="assets/icon.png" alt="QueerIQ" class="w-full h-full object-cover">
+        </div>
+        <div class="flex flex-col">
+          <span class="text-base sm:text-lg font-extrabold tracking-tight text-white">QueerIQ</span>
+          <span class="text-[11px] font-medium text-[#FF453A]">Hesap ve Veri Silme</span>
+        </div>
+      </a>
+
+      <nav class="flex items-center gap-2 sm:gap-3 text-xs font-semibold">
+        <a href="privacy.html" class="hidden sm:inline-block px-3 py-1.5 rounded-lg text-[#8E8E93] hover:text-white transition-colors">
+          Gizlilik Politikası
+        </a>
+        <a href="terms.html" class="hidden sm:inline-block px-3 py-1.5 rounded-lg text-[#8E8E93] hover:text-white transition-colors">
+          Kullanım Şartları
+        </a>
+        <a href="destek-fonu.html" class="hidden md:inline-block px-3 py-1.5 rounded-lg text-rose-400 hover:text-rose-300 transition-colors">
+          Destek Fonu
+        </a>
+        <a href="index.html" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-[#1C1C1E] hover:bg-[#2C2C2E] border border-white/[0.08] text-white transition-colors">
+          <svg class="w-3.5 h-3.5 text-[#818CF8]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+          <span>Ana Sayfa</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="py-12 sm:py-16">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Document Header -->
+      <div class="mb-8 space-y-4">
+        <div class="flex flex-wrap items-center gap-2.5">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FF453A]/15 border border-[#FF453A]/30 text-xs font-semibold text-[#FF453A]">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#FF453A]"></span>
+            <span>Google Play &amp; App Store Uyumlu Veri Silme Sayfası</span>
+          </div>
+          <span class="text-xs text-[#8E8E93]">Son Güncelleme: Kasım 2026</span>
+        </div>
+
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
+          QueerIQ Hesap ve Veri Silme Talebi
+        </h1>
+
+        <p class="text-sm sm:text-base text-[#8E8E93] leading-relaxed">
+          Bu sayfa, <strong class="text-white">Enes Efe Tokta</strong> tarafından geliştirilen <strong class="text-white">QueerIQ</strong> mobil uygulaması kullanıcılarının hesaplarını ve ilişkili kişisel verilerini nasıl kalıcı olarak silebileceklerini, hangi verilerin silindiğini veya saklandığını ve ek saklama sürelerini şeffaf biçimde açıklar.
+        </p>
+
+        <!-- App & Developer Reference Card (Google Play Listing Identity) -->
+        <div class="p-4 sm:p-5 rounded-2xl bg-[#1C1C1E] border border-white/[0.08] grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
+          <div>
+            <div class="text-[#8E8E93] mb-0.5">Uygulama Adı</div>
+            <div class="font-bold text-white">QueerIQ</div>
+            <div class="text-[11px] text-[#8E8E93]">Kuir Kültür, Tarih ve Trivia</div>
+          </div>
+          <div>
+            <div class="text-[#8E8E93] mb-0.5">Geliştirici / Veri Sorumlusu</div>
+            <div class="font-bold text-white">Enes Efe Tokta</div>
+            <div class="text-[11px] text-[#8E8E93]">Google Play &amp; App Store Yayıncısı</div>
+          </div>
+          <div>
+            <div class="text-[#8E8E93] mb-0.5">Resmi Destek &amp; Silme E-postası</div>
+            <a href="mailto:queer-iq@enesefetokta.com?subject=QueerIQ%20Hesap%20Silme%20Talebi" class="font-bold text-[#818CF8] hover:underline break-all">
+              queer-iq@enesefetokta.com
+            </a>
+            <div class="text-[11px] text-[#8E8E93]">Yanıt Süresi: En geç 24 saat</div>
+          </div>
+        </div>
+
+        <!-- Quick Anchor Pills -->
+        <div class="pt-1 flex flex-wrap gap-2 text-xs font-medium">
+          <a href="#silme-adimlari" class="px-3 py-1.5 rounded-full bg-[#FF453A]/15 hover:bg-[#FF453A]/20 border border-[#FF453A]/30 text-[#FF453A] transition-colors">1. Hesap Silme Adımları</a>
+          <a href="#web-talep" class="px-3 py-1.5 rounded-full bg-[#1C1C1E] hover:bg-[#2C2C2E] border border-white/[0.08] text-slate-300 transition-colors">2. Web / E-posta Talebi</a>
+          <a href="#veri-turleri" class="px-3 py-1.5 rounded-full bg-[#1C1C1E] hover:bg-[#2C2C2E] border border-white/[0.08] text-slate-300 transition-colors">3. Silinen &amp; Saklanan Veriler</a>
+          <a href="#kismi-silme" class="px-3 py-1.5 rounded-full bg-[#1C1C1E] hover:bg-[#2C2C2E] border border-white/[0.08] text-slate-300 transition-colors">4. Kısmi Veri Düzenleme</a>
+        </div>
+      </div>
+
+      <!-- Main Content Card -->
+      <article class="surface-card p-6 sm:p-10 space-y-10 legal-prose">
+
+        <!-- 1. HESAP SİLME ADIMLARI -->
+        <section id="silme-adimlari" class="space-y-5">
+          <h2 class="flex items-center gap-2.5 text-lg sm:text-xl font-bold text-white">
+            <span class="w-6 h-6 rounded-lg bg-[#FF453A]/20 text-[#FF453A] text-xs font-bold inline-flex items-center justify-center flex-shrink-0">1</span>
+            <span>Hesabınızın Silinmesini Talep Etmek İçin İzlemeniz Gereken Adımlar</span>
+          </h2>
+
+          <p class="text-sm text-slate-300 leading-relaxed">
+            QueerIQ hesabınızı ve bağlı tüm kişisel verilerinizi <strong class="text-white">iki farklı yöntemden</strong> dilediğinizi seçerek kalıcı olarak sildirebilirsiniz:
+          </p>
+
+          <!-- Method A: In-App Deletion -->
+          <div class="p-5 sm:p-6 rounded-2xl bg-[#2C2C2E] border border-white/[0.08] space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <h3 class="text-base font-bold text-white flex items-center gap-2">
+                <span class="px-2.5 py-0.5 rounded-full bg-[#30D158]/15 text-[#30D158] text-[11px] font-bold">Yöntem A • Anında</span>
+                <span>Uygulama İçinden Hesap Silme</span>
+              </h3>
+              <span class="text-[11px] text-[#8E8E93]">İşlem Süresi: Anında</span>
+            </div>
+
+            <ol class="space-y-3 text-sm text-slate-300">
+              <li class="flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-[#1C1C1E] border border-white/[0.1] text-xs font-bold text-white inline-flex items-center justify-center flex-shrink-0 mt-0.5">1</span>
+                <span>Cihazınızda <strong class="text-white">QueerIQ</strong> mobil uygulamasını açın ve silmek istediğiniz hesabınızla oturum açın.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-[#1C1C1E] border border-white/[0.1] text-xs font-bold text-white inline-flex items-center justify-center flex-shrink-0 mt-0.5">2</span>
+                <span>Alt gezinme menüsünden <strong class="text-white">Profil</strong> sekmesine dokunun.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-[#1C1C1E] border border-white/[0.1] text-xs font-bold text-white inline-flex items-center justify-center flex-shrink-0 mt-0.5">3</span>
+                <span><strong class="text-white">Hesap ve Güvenlik</strong> bölümüne girin.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-[#1C1C1E] border border-white/[0.1] text-xs font-bold text-white inline-flex items-center justify-center flex-shrink-0 mt-0.5">4</span>
+                <span>Sayfanın alt kısmındaki <strong class="text-[#FF453A]">"Hesabımı Sil"</strong> butonuna dokunun ve açılan güvenlik onay penceresini onaylayın.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-[#30D158]/20 border border-[#30D158]/40 text-xs font-bold text-[#30D158] inline-flex items-center justify-center flex-shrink-0 mt-0.5">✓</span>
+                <span>Onayınızın ardından hesabınız, profil bilgileriniz ve oyun ilerlemeniz sunucularımızdan <strong class="text-white">anında ve kalıcı olarak</strong> silinir.</span>
+              </li>
+            </ol>
+
+            <div class="p-3 rounded-xl bg-[#1C1C1E] border border-white/[0.06] text-xs text-[#8E8E93]">
+              Hızlı Yol: <code class="text-white">QueerIQ Uygulaması &gt; Profil &gt; Hesap ve Güvenlik &gt; Hesabımı Sil</code>
+            </div>
+          </div>
+
+          <!-- Method B: Web / Email Deletion (Without Reinstalling App) -->
+          <div id="web-talep" class="p-5 sm:p-6 rounded-2xl bg-[#2C2C2E] border border-white/[0.08] space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <h3 class="text-base font-bold text-white flex items-center gap-2">
+                <span class="px-2.5 py-0.5 rounded-full bg-indigo-500/20 text-[#818CF8] text-[11px] font-bold">Yöntem B • Uygulama Dışı</span>
+                <span>Web / E-posta Üzerinden Silme Talebi</span>
+              </h3>
+              <span class="text-[11px] text-[#8E8E93]">İşlem Süresi: En geç 24 saat (Maks. 7 iş günü)</span>
+            </div>
+
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              QueerIQ uygulamasını cihazınızdan kaldırdıysanız veya uygulamaya erişiminiz yoksa, yeniden yüklemenize gerek kalmadan aşağıdaki adımlarla hesabınızın silinmesini talep edebilirsiniz:
+            </p>
+
+            <ol class="space-y-3 text-sm text-slate-300">
+              <li class="flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-[#1C1C1E] border border-white/[0.1] text-xs font-bold text-white inline-flex items-center justify-center flex-shrink-0 mt-0.5">1</span>
+                <span>QueerIQ hesabınıza kayıtlı e-posta adresinizden <a href="mailto:queer-iq@enesefetokta.com?subject=QueerIQ%20Hesap%20Silme%20Talebi" class="text-[#818CF8] underline font-semibold">queer-iq@enesefetokta.com</a> adresine bir e-posta oluşturun (aşağıdaki hazır butonu kullanabilirsiniz).</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-[#1C1C1E] border border-white/[0.1] text-xs font-bold text-white inline-flex items-center justify-center flex-shrink-0 mt-0.5">2</span>
+                <span>E-posta konu satırına <strong class="text-white">"QueerIQ Hesap Silme Talebi"</strong> yazın.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-[#1C1C1E] border border-white/[0.1] text-xs font-bold text-white inline-flex items-center justify-center flex-shrink-0 mt-0.5">3</span>
+                <span>Mesaj gövdesinde hesabınıza kayıtlı <strong class="text-white">e-posta adresinizi</strong> ve hatırlıyorsanız <strong class="text-white">kullanıcı adınızı (rumuz)</strong> paylaşın.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-[#1C1C1E] border border-white/[0.1] text-xs font-bold text-white inline-flex items-center justify-center flex-shrink-0 mt-0.5">4</span>
+                <span>Geliştirici (<strong class="text-white">Enes Efe Tokta</strong>) tarafından hesap sahipliği doğrulandıktan sonra hesabınız ve ilişkili verileriniz <strong class="text-white">en geç 24 saat içinde</strong> (yoğunluk durumlarında en fazla 7 iş günü) kalıcı olarak silinir ve size e-posta ile onay bildirimi gönderilir.</span>
+              </li>
+            </ol>
+
+            <!-- Action Box & Email Template (Static / Mailto, No Backend Required) -->
+            <div class="pt-2 space-y-4">
+              <div class="p-4 rounded-xl bg-[#1C1C1E] border border-white/[0.08] space-y-2 text-xs">
+                <div class="text-[11px] font-semibold uppercase tracking-wider text-[#8E8E93]">Örnek E-posta Şablonu</div>
+                <div class="text-slate-300"><strong class="text-white">Alıcı:</strong> queer-iq@enesefetokta.com</div>
+                <div class="text-slate-300"><strong class="text-white">Konu:</strong> QueerIQ Hesap Silme Talebi</div>
+                <div class="text-slate-300 pt-1 border-t border-white/[0.06] leading-relaxed">
+                  Merhaba Enes Efe Tokta / QueerIQ Ekibi,<br>
+                  QueerIQ uygulamasına kayıtlı hesabımın ve ilişkili tüm kişisel verilerimin kalıcı olarak silinmesini talep ediyorum.<br>
+                  • Kayıtlı E-posta Adresim: [e-posta adresiniz]<br>
+                  • Kullanıcı Adım (Rumuz): [varsa rumuzunuz]
+                </div>
+              </div>
+
+              <div class="flex flex-wrap items-center gap-3">
+                <a href="mailto:queer-iq@enesefetokta.com?subject=QueerIQ%20Hesap%20Silme%20Talebi&body=Merhaba%20QueerIQ%20Ekibi%2C%0A%0AQueerIQ%20uygulamas%C4%B1na%20kay%C4%B1tl%C4%B1%20hesab%C4%B1m%C4%B1n%20ve%20ili%C5%9Fkili%20t%C3%BCm%20ki%C5%9Fisel%20verilerimin%20kal%C4%B1c%C4%B1%20olarak%20silinmesini%20talep%20ediyorum.%0A%0AKay%C4%B1tl%C4%B1%20E-posta%20Adresim%3A%20%0AKullan%C4%B1c%C4%B1%20Ad%C4%B1m%20(Rumuz)%3A%20" class="inline-flex items-center gap-2 px-5 py-3 rounded-full text-xs font-bold bg-[#FF453A] hover:bg-[#ff5a50] text-white transition-colors">
+                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                  <span>E-posta İle Hesap Silme Talebi Gönder</span>
+                </a>
+                <span class="text-[11px] text-[#8E8E93]">Varsayılan e-posta uygulamanızı hazır şablonla açar.</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. SİLİNEN VE SAKLANAN VERİ TÜRLERİ VE EK SAKLAMA SÜRELERİ -->
+        <section id="veri-turleri" class="space-y-5 pt-8 border-t border-white/[0.08]">
+          <h2 class="flex items-center gap-2.5 text-lg sm:text-xl font-bold text-white">
+            <span class="w-6 h-6 rounded-lg bg-indigo-500/15 text-[#818CF8] text-xs font-bold inline-flex items-center justify-center flex-shrink-0">2</span>
+            <span>Silinen veya Saklanan Veri Türleri ve Ek Saklama Süreleri</span>
+          </h2>
+
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Hesap silme işleminiz tamamlandığında hangi veri kategorilerinin <strong class="text-white">kalıcı olarak silindiği</strong>, hangilerinin anonim veya yasal güvenlik gerekçesiyle <strong class="text-white">geçici olarak saklandığı</strong> ve <strong class="text-white">ek saklama süreleri</strong> aşağıdaki tabloda açıkça belirtilmiştir:
+          </p>
+
+          <!-- Data Deletion & Retention Table -->
+          <div class="overflow-x-auto rounded-2xl border border-white/[0.08] bg-[#161618]">
+            <table class="w-full text-left text-xs border-collapse">
+              <thead>
+                <tr class="border-b border-white/[0.08] text-[#8E8E93] bg-[#2C2C2E]/60">
+                  <th class="py-3.5 px-4 font-semibold">Veri Türü</th>
+                  <th class="py-3.5 px-4 font-semibold">Kapsam</th>
+                  <th class="py-3.5 px-4 font-semibold">İşlem Durumu</th>
+                  <th class="py-3.5 px-4 font-semibold">Ek Saklama Süresi</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-white/[0.06] text-slate-300">
+                <tr>
+                  <td class="py-3.5 px-4 font-semibold text-white">Hesap &amp; Kimlik Doğrulama</td>
+                  <td class="py-3.5 px-4">E-posta adresi, şifrelenmiş oturum belirteçleri, Supabase kullanıcı kimliği (UID).</td>
+                  <td class="py-3.5 px-4">
+                    <span class="inline-flex px-2 py-0.5 rounded-md bg-[#FF453A]/15 text-[#FF453A] font-semibold text-[11px]">Kalıcı Silinir</span>
+                  </td>
+                  <td class="py-3.5 px-4 font-semibold text-white">0 Gün</td>
+                </tr>
+                <tr>
+                  <td class="py-3.5 px-4 font-semibold text-white">Profil &amp; Kişiselleştirme</td>
+                  <td class="py-3.5 px-4">Seçilen rumuz (takma ad), avatar, zamir (pronoun) ve Onur rozeti tercihleri.</td>
+                  <td class="py-3.5 px-4">
+                    <span class="inline-flex px-2 py-0.5 rounded-md bg-[#FF453A]/15 text-[#FF453A] font-semibold text-[11px]">Kalıcı Silinir</span>
+                  </td>
+                  <td class="py-3.5 px-4 font-semibold text-white">0 Gün</td>
+                </tr>
+                <tr>
+                  <td class="py-3.5 px-4 font-semibold text-white">Oyun &amp; İlerleme Verileri</td>
+                  <td class="py-3.5 px-4">XP puanları, seviye, günlük seriler, trivia soru geçmişi, Akademi &amp; Sinema ilerlemeleri, Haftalık Çift Arenası oyları.</td>
+                  <td class="py-3.5 px-4">
+                    <span class="inline-flex px-2 py-0.5 rounded-md bg-[#FF453A]/15 text-[#FF453A] font-semibold text-[11px]">Kalıcı Silinir</span>
+                  </td>
+                  <td class="py-3.5 px-4 font-semibold text-white">0 Gün</td>
+                </tr>
+                <tr>
+                  <td class="py-3.5 px-4 font-semibold text-white">Anonim Çökme &amp; Performans Logları</td>
+                  <td class="py-3.5 px-4">Google Firebase / Analytics üzerinden toplanan, kullanıcı kimliğiyle eşleştirilemeyen teknik hata raporları.</td>
+                  <td class="py-3.5 px-4">
+                    <span class="inline-flex px-2 py-0.5 rounded-md bg-[#FF9F0A]/15 text-[#FF9F0A] font-semibold text-[11px]">Anonim Saklanır</span>
+                  </td>
+                  <td class="py-3.5 px-4">En fazla <strong class="text-white">90 Gün</strong> (otomatik imha)</td>
+                </tr>
+                <tr>
+                  <td class="py-3.5 px-4 font-semibold text-white">Güvenlik &amp; Yasal Uyum Kayıtları</td>
+                  <td class="py-3.5 px-4">Kötüye kullanım, dolandırıcılık ve güvenlik ihlallerini önlemeye yönelik izole sunucu erişim günlükleri (varsa).</td>
+                  <td class="py-3.5 px-4">
+                    <span class="inline-flex px-2 py-0.5 rounded-md bg-[#FF9F0A]/15 text-[#FF9F0A] font-semibold text-[11px]">İzole Saklanır</span>
+                  </td>
+                  <td class="py-3.5 px-4">En fazla <strong class="text-white">30 Gün</strong> (yasal zorunluluk yoksa imha)</td>
+                </tr>
+                <tr>
+                  <td class="py-3.5 px-4 font-semibold text-white">Reklam Kimliği (AdMob)</td>
+                  <td class="py-3.5 px-4">Cihaz bazlı reklam tanımlayıcısı (AAID / IDFA). QueerIQ sunucularında saklanmaz; cihaz ayarlarından sıfırlanabilir.</td>
+                  <td class="py-3.5 px-4">
+                    <span class="inline-flex px-2 py-0.5 rounded-md bg-white/[0.08] text-slate-300 font-semibold text-[11px]">Sunucuda Tutulmaz</span>
+                  </td>
+                  <td class="py-3.5 px-4 font-semibold text-white">0 Gün</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-[#FF453A]/10 border border-[#FF453A]/25 text-xs text-rose-200 leading-relaxed">
+            <strong class="text-white">Önemli Uyarı:</strong> Hesap silme işlemi geri alınamaz. Hesabınız silindiğinde kazanılan tüm XP puanları, seviyeler, rozetler ve seriler kalıcı olarak kaldırılır ve aynı hesap sonradan geri kurtarılamaz.
+          </div>
+        </section>
+
+        <!-- 3. KISMİ VERİ SİLME (HESABI SİLMEDEN VERİ YÖNETİMİ) -->
+        <section id="kismi-silme" class="space-y-3.5 pt-8 border-t border-white/[0.08]">
+          <h2 class="flex items-center gap-2.5 text-lg sm:text-xl font-bold text-white">
+            <span class="w-6 h-6 rounded-lg bg-indigo-500/15 text-[#818CF8] text-xs font-bold inline-flex items-center justify-center flex-shrink-0">3</span>
+            <span>Hesabı Silmeden Belirli Verileri Kaldırma</span>
+          </h2>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Hesabınızı tamamen kapatmak istemiyorsanız, QueerIQ uygulaması içindeki <strong class="text-white">Profil &gt; Profili Düzenle</strong> ekranından takma adınızı (rumuz), avatarınızı, zamir bilgilerinizi veya seçili Onur rozetlerinizi dilediğiniz zaman değiştirebilir ya da kaldırabilirsiniz. Belirli bir verinin silinmesine yönelik özel talepleriniz için de <a href="mailto:queer-iq@enesefetokta.com" class="text-[#818CF8] underline font-semibold">queer-iq@enesefetokta.com</a> adresinden bize ulaşabilirsiniz.
+          </p>
+        </section>
+
+        <!-- 4. İLETİŞİM VE DOĞRULAMA -->
+        <section id="iletisim" class="space-y-3.5 pt-8 border-t border-white/[0.08]">
+          <h2 class="flex items-center gap-2.5 text-lg sm:text-xl font-bold text-white">
+            <span class="w-6 h-6 rounded-lg bg-indigo-500/15 text-[#818CF8] text-xs font-bold inline-flex items-center justify-center flex-shrink-0">4</span>
+            <span>Veri Sorumlusu ve İletişim Bilgileri</span>
+          </h2>
+          <div class="p-4 rounded-2xl bg-[#2C2C2E] text-xs space-y-1.5 text-slate-300">
+            <div><strong class="text-white">Uygulama Adı:</strong> QueerIQ</div>
+            <div><strong class="text-white">Geliştirici / Veri Sorumlusu:</strong> Enes Efe Tokta</div>
+            <div><strong class="text-white">Hesap Silme &amp; Destek E-postası:</strong> <a href="mailto:queer-iq@enesefetokta.com" class="text-[#818CF8] underline font-semibold">queer-iq@enesefetokta.com</a></div>
+            <div><strong class="text-white">Resmi Web Sitesi:</strong> <a href="https://queer-iq.enesefetokta.com" class="text-[#818CF8] underline">https://queer-iq.enesefetokta.com</a></div>
+            <div><strong class="text-white">Gizlilik Politikası:</strong> <a href="privacy.html" class="text-[#818CF8] underline">https://queer-iq.enesefetokta.com/privacy.html</a></div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/[0.08] py-10 text-xs text-[#8E8E93]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2.5">
+        <img src="assets/icon.png" alt="QueerIQ" class="w-6 h-6 rounded-md border border-white/[0.12]">
+        <span class="font-bold text-white">QueerIQ</span>
+        <span>•</span>
+        <span>© 2026</span>
+      </div>
+      <div class="flex flex-wrap items-center justify-center gap-5">
+        <a href="index.html" class="hover:text-white transition-colors">Ana Sayfa</a>
+        <a href="destek-fonu.html" class="text-rose-400 hover:underline">Destek Fonu</a>
+        <a href="hesap-silme.html" class="text-[#FF453A] font-semibold">Hesap Silme</a>
+        <a href="privacy.html" class="hover:text-white transition-colors">Gizlilik Politikası</a>
+        <a href="terms.html" class="hover:text-white transition-colors">Kullanım Şartları</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
